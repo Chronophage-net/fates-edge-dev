@@ -2,7 +2,7 @@
 
 Developer portal for Fate's Edge, deployed to GitHub Pages at **dev.fates-edge.com**.
 
-An Astro site: the call-for-contributors landing page, an architecture overview, an "Art Bible" orientation page (the bible itself stays in `fates-edge-docs`), a design-tokens reference shared with the blog and web client, and a roadmap. The "forum" is GitHub Discussions on this repo, linked from the nav — see below for one-time setup.
+An Astro site: the call-for-contributors landing page, an architecture overview, the full **Art Bible** (copied in from `fates-edge-docs`, which is otherwise private — this is the one piece of that repo meant to be public) plus a Call for Art page with the fan-art policy, a design-tokens reference shared with the blog and web client, and a roadmap. The "forum" is GitHub Discussions on this repo, linked from the nav — see below for one-time setup.
 
 ## Local development
 
@@ -20,10 +20,13 @@ src/
   layouts/DocsLayout.astro    adds the left sidebar for docs-style pages
   pages/index.astro           the call-for-contributors homepage
   pages/contribute.astro
+  pages/workflow.astro
   pages/architecture.astro
-  pages/art-bible.astro
+  pages/art-bible.astro       renders content/art/art-bible.md in full
+  pages/call-for-art.astro    fan-art policy, submission process, licensing
   pages/design-tokens.astro
   pages/roadmap.astro
+  content/art/art-bible.md    the full Art Bible, copied in from fates-edge-docs
   styles/theme.css            shared token set, derived from app.css
 .github/
   workflows/deploy.yml        builds + deploys to Pages on push to main

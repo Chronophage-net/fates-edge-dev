@@ -1,0 +1,54 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+<DocsLayout title="Call for Art" description="How to contribute fan art, the fan-art policy, and how licensing works for Fate's Edge artwork.">
+  <h1>🎨 Call for Art</h1>
+  <p>The <a href="/art-bible">Art Bible</a> exists because Fate's Edge needs a lot of art — region banners, faction crests, character portraits, Patron shrines, UI icons — and one person can't draw all of it. If you illustrate, this is an open invitation.</p>
+
+  <div class="callout">
+    <strong>Start here:</strong> read the <a href="/art-bible">Art Bible</a> for the setting's visual language, palette philosophy, and the "do not draw" list — then pick a region, a Patron, a faction, or a creature from the <a href="/art-bible#12-quick-reference-index">quick-reference index</a> and go.
+  </div>
+
+  <h2>What's needed</h2>
+  <ul>
+    <li><strong>Region key art</strong> — the "if you only draw one thing" hero shots in the Art Bible are ready-to-brief prompts; any of the twenty-plus regions there is fair game.</li>
+    <li><strong>Faction crests and icons</strong> — the six shipped factions have locked colors and icons; new factions follow the same one-color/one-icon/one-tier pattern.</li>
+    <li><strong>Patron shrines and cult symbols</strong> — each Patron has a signature ritual object; illustrating one is a small, self-contained piece.</li>
+    <li><strong>Character portraits</strong> — player characters, named NPCs, or the setting's non-human peoples (wood elves, high elves, gnomes, halflings, dwarves — see the Art Bible's peoples section for what makes each distinct).</li>
+    <li><strong>UI icons and in-app assets</strong> — small, functional pieces for the web client; must read clearly as a thumbnail against the app's dark theme (see <a href="/design-tokens">Design Tokens</a>).</li>
+    <li><strong>Adventure and module illustrations</strong> — if you're writing an adventure module (see <a href="/contribute">Ways to Contribute</a>), art for your own module is especially welcome.</li>
+  </ul>
+
+  <h2>How to submit</h2>
+  <ol>
+    <li>Post it in <a href="https://github.com/Chronophage-net/fate-edge-dev/discussions">Discussions</a> (an Art / Show and Tell category) — that's the fastest way to get eyes on it and start a conversation about whether/where it fits.</li>
+    <li>For art meant to ship in the web client or docs, open a PR against the relevant repo (<a href="https://github.com/Chronophage-net/fates-edge-apps">fates-edge-apps</a> for UI assets) referencing the discussion.</li>
+    <li>Include what you used to make it (traditional, digital, a specific AI tool) and confirm you hold the rights to submit it — see licensing below.</li>
+  </ol>
+
+  <h2>Fan Art Policy</h2>
+  <p>Fan art — art you make of Fate's Edge characters, regions, factions, or creatures, for your own enjoyment or to share with the community — is explicitly welcome and encouraged. To keep this simple and fair for everyone:</p>
+  <ul>
+    <li><strong>You keep your copyright.</strong> Making fan art of Fate's Edge doesn't transfer ownership of your artwork to anyone. It's yours.</li>
+    <li><strong>Personal, non-commercial fan art needs no permission.</strong> Draw, paint, model, or generate anything from the setting for personal enjoyment, your own table, or to share (unmonetized) with the community — no ask required.</li>
+    <li><strong>If you want it featured</strong> (on this portal, the blog, or in official channels), you're granting a simple non-exclusive license to display and credit it as fan art — you can ask for it to be taken down later, and we'll honor that.</li>
+    <li><strong>Selling fan art needs a quick conversation first</strong> — the same rule as any commercial use of the proprietary setting content (see Licensing below). Prints, commissions, and merch using Fate's Edge characters or setting elements are the kind of thing to email about before listing.</li>
+    <li><strong>Don't imply official endorsement</strong> your art doesn't otherwise have — "fan art of Fate's Edge" is great; presenting it as official canon or a sanctioned product isn't.</li>
+    <li><strong>Be excellent to the source material's tone</strong> — the Art Bible's three rules (nothing is new, power costs something, no chosen ones) aren't mandatory for fan art, but they're a good filter if you want your piece to feel like it belongs.</li>
+  </ul>
+
+  <h2>Licensing, precisely</h2>
+  <p>Fate's Edge bundles three legally distinct things — code, the SRD, and the proprietary setting/art — under one roof. Art falls under the same split as everything else:</p>
+  <table>
+    <thead><tr><th>What</th><th>License</th><th>What it means for art</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Official art</strong> (the Art Bible itself, shipped illustrations, faction/Patron iconography)</td><td>All Rights Reserved (personal, non-commercial use permitted)</td><td>You can view, reference, and use it to run personal games. Redistributing the original files or using them commercially needs permission.</td></tr>
+      <tr><td><strong>Your fan art</strong></td><td>Yours — license it however you like</td><td>You own what you make. Put a Creative Commons license on it if you want others to remix it, or keep all rights — your call.</td></tr>
+      <tr><td><strong>UI icons/assets you contribute via PR</strong></td><td>MIT (matches the codebase)</td><td>Same as any code contribution — once merged, it's part of the MIT-licensed app.</td></tr>
+    </tbody>
+  </table>
+  <p>If you want to release your fan art under a Creative Commons license (CC BY, CC BY-SA, CC BY-NC, etc.) so others can remix it, that's entirely your choice — just say so when you share it, and it doesn't change anything about the underlying setting's own copyright. Commercial use of the setting itself (the Amaranthine Core, named NPCs/Patrons, factions) — whether in writing, art, or anything else — routes through <strong>support@fates-edge.com</strong>, same as described in <a href="https://blog.fates-edge.com/a-gift-not-a-gate">the "gift, not a gate" post</a>.</p>
+
+  <h2>Attribution</h2>
+  <p>Credited contributors get a mention wherever their art appears — a caption, a credits page, or a README, depending on where it lands. If you'd rather stay anonymous or pseudonymous, that's fine too — just say so when you submit.</p>
+</DocsLayout>

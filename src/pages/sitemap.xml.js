@@ -1,6 +1,6 @@
 export async function GET(context) {
   const paths = [
-    '', 'contribute/', 'architecture/', 'art-bible/', 'design-tokens/', 'roadmap/',
+    '', 'contribute/', 'workflow/', 'architecture/', 'art-bible/', 'call-for-art/', 'design-tokens/', 'roadmap/',
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
