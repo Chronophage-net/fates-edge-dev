@@ -1,0 +1,26 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+<DocsLayout title="Design Tokens">
+  <h1>Design Tokens</h1>
+  <p>This portal, the blog, and the web client all draw from the same small token set, sourced from <code>fates-edge-apps/utilities/javascript/fates-edge-web-client/css/app.css</code>. Each site keeps its own <code>src/styles/theme.css</code> as a curated subset rather than importing the app shell directly — update by hand if the source palette changes.</p>
+
+  <h2>Color</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem;">
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.6rem 0.9rem; font-family:var(--font-mono); font-size:0.8rem;">--gold <span style="color:var(--gold);">■</span> #f0a500</div>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.6rem 0.9rem; font-family:var(--font-mono); font-size:0.8rem;">--red <span style="color:var(--red);">■</span> #e74c3c</div>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.6rem 0.9rem; font-family:var(--font-mono); font-size:0.8rem;">--green <span style="color:var(--green);">■</span> #2ecc71</div>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.6rem 0.9rem; font-family:var(--font-mono); font-size:0.8rem;">--blue <span style="color:var(--blue);">■</span> #3498db</div>
+    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.6rem 0.9rem; font-family:var(--font-mono); font-size:0.8rem;">--purple <span style="color:var(--purple);">■</span> #9b59b6</div>
+  </div>
+  <p>Gold is reserved for accents and calls to action — it means "pay attention here," matching the Art Bible's own rule that gold "always means something has a price attached." Base surface colors (<code>--bg</code> through <code>--bg4</code>) stay dark and muted so gold reads as significant rather than decorative — the same palette philosophy the Art Bible states for illustration, applied to UI.</p>
+
+  <h2>Type</h2>
+  <p><code>--font-body</code>: Inter, with system-UI fallbacks. <code>--font-mono</code>: JetBrains Mono, for code and repo references.</p>
+
+  <h2>Shape & elevation</h2>
+  <p><code>--radius</code> (12px), <code>--radius-sm</code> (6px), <code>--radius-md</code> (9px), <code>--radius-full</code> (pill). <code>--shadow-glow</code> for hover states on interactive cards, <code>--shadow-elevated</code> for modals and popovers.</p>
+
+  <h2>Light mode</h2>
+  <p>Every token has a light-mode override under <code>html.light</code>, matching the web client's own light theme. Contrast ratios were audited for WCAG AA — see <code>fates-edge-apps</code>'s <code>ACCESSIBILITY.md</code> if you're adding new color tokens.</p>
+</DocsLayout>

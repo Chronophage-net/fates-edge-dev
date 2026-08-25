@@ -1,0 +1,16 @@
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What's the idea?
+      description: A subsystem, a feature, a mechanic, a client surface — anything you'd want to see in Fate's Edge.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter?
+    validations:
+      required: false

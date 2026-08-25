@@ -1,0 +1,42 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+<DocsLayout title="Ways to Contribute">
+  <h1>Ways to Contribute</h1>
+  <p>Every entry below is a doorway into a real subsystem. Pick whichever one sparks your interest — small PRs are as welcome as big ones.</p>
+
+  <h2>Extend the Tag DSL</h2>
+  <p>Add new GM directives, narrative tools, or mechanical hooks to the deterministic, test-covered protocol that keeps the AI GM legible. Start in <code>fates-edge-ai-gm-bot</code>'s tag-protocol module.</p>
+
+  <h2>Build new client surfaces</h2>
+  <p>Mobile app, Slack bot, custom VTT — anything that speaks the room protocol can join the ecosystem. The transport layer is designed for exactly this.</p>
+
+  <h2>Add new LLM drivers</h2>
+  <p>The AI GM is driver-agnostic. Anthropic, Groq, Gemini, and local models are all fair game — implement the driver interface and drop it in.</p>
+
+  <h2>Improve the transport layer</h2>
+  <p>Event parity across web, desktop, terminal, Discord, Roll20, Foundry, and Python clients; reliability and scaling work always welcome.</p>
+
+  <h2>Author adventure modules</h2>
+  <p>JSON-based, rules-native, AI-optional. If you'd rather write than code, this is the highest-leverage way to contribute.</p>
+
+  <h2>Expand the voice stack</h2>
+  <p>New TTS engines, ambience systems, or adapters for the (fully toggleable) voice pipeline.</p>
+
+  <h2>Enhance the web client</h2>
+  <p>VTT tools, offline mode, UI polish — styled against the shared theme documented on the <a href="/design-tokens">Design Tokens</a> page.</p>
+
+  <h2>Contribute to the terminal client</h2>
+  <p>ANSI UI, WS protocol, dice UX — for the devs who never want to leave the terminal.</p>
+
+  <h2>Write docs and examples</h2>
+  <p>Tutorials, diagrams, onboarding guides. This portal and the blog are both fair game for PRs too — they're just Astro sites in <code>fate-edge-dev</code> and <code>fates-edge-blog</code>.</p>
+
+  <h2>First PR checklist</h2>
+  <ul>
+    <li>Read the <a href="/architecture">architecture overview</a> for the subsystem you're touching.</li>
+    <li>Open an issue first for anything non-trivial — it's the fastest way to avoid duplicate or misdirected work.</li>
+    <li>Tests are expected for the rules engine, transport layer, and Tag DSL; docs and content PRs don't need them.</li>
+    <li>Say hello in <a href="https://github.com/Chronophage-net/fate-edge-dev/discussions">Discussions</a> — the maintainer (Nick) responds there.</li>
+  </ul>
+</DocsLayout>

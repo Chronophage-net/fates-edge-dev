@@ -1,0 +1,47 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+
+const nav = [
+  { label: 'Get Started', links: [
+    { href: '/', text: 'Overview' },
+    { href: '/contribute', text: 'Ways to Contribute' },
+  ]},
+  { label: 'Architecture', links: [
+    { href: '/architecture', text: 'System Overview' },
+    { href: '/architecture#tag-dsl', text: 'Tag DSL / GM Protocol' },
+    { href: '/architecture#transport', text: 'Transport Layer' },
+    { href: '/architecture#ai-gm', text: 'AI GM' },
+    { href: '/architecture#voice', text: 'Voice Stack' },
+  ]},
+  { label: 'World & Design', links: [
+    { href: '/art-bible', text: 'Art Bible' },
+    { href: '/design-tokens', text: 'Design Tokens' },
+  ]},
+  { label: 'Project', links: [
+    { href: '/roadmap', text: 'Roadmap' },
+    { href: 'https://github.com/Chronophage-net/fate-edge-dev/discussions', text: 'Discussions ↗' },
+    { href: 'https://github.com/Chronophage-net', text: 'All Repos ↗' },
+  ]},
+];
+---
+<BaseLayout title={title} description={description}>
+  <div class="portal-shell" style="padding-top: 2rem;">
+    <aside class="side-nav">
+      {nav.map((group) => (
+        <>
+          <h4>{group.label}</h4>
+          {group.links.map((l) => <a href={l.href}>{l.text}</a>)}
+        </>
+      ))}
+    </aside>
+    <div class="docs-body">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

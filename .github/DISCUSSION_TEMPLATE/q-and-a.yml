@@ -1,0 +1,10 @@
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you want to know?
+      description: Architecture questions, "where do I start" questions, anything.
+    validations:
+      required: true

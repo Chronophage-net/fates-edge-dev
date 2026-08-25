@@ -1,0 +1,50 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+<DocsLayout title="Architecture">
+  <h1>Systems Architecture</h1>
+  <p>Fate's Edge is a system of systems: a tabletop ruleset, an LLM-driven Game Master built on top of it, a real-time transport fabric connecting a dozen client surfaces to that GM, and an optional voice pipeline layered on top of all of it.</p>
+  <p>The full write-up lives in <code>fates-edge-docs/ARCHITECTURE.md</code> (companion to <a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot/blob/main/DESIGN.md">fates-edge-ai-gm-bot's DESIGN.md</a>) — this page is the map, not the territory.</p>
+
+  <pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│  Layer 4 — Voice: Chatterbox (TTS) → voice-adapter → RVC (optional)  │
+├─────────────────────────────────────────────────────────────────────┤
+│  Layer 3 — Clients: web · desktop · terminal · Discord · Roll20 ·    │
+│            Foundry · Python CLI/GUI                                  │
+├─────────────────────────────────────────────────────────────────────┤
+│  Layer 2 — Transport: socket server (Socket.IO + plain WS, rooms)    │
+├─────────────────────────────────────────────────────────────────────┤
+│  Layer 1 — AI GM Bot: driver-agnostic LLM orchestration, tag DSL,    │
+│            adventure state machine                                   │
+├─────────────────────────────────────────────────────────────────────┤
+│  Layer 0 — Rules Engine: d10 pool, Outcome Matrix, Position, SB,     │
+│            Boons, Obligation, Timers                                 │
+└─────────────────────────────────────────────────────────────────────┘</code></pre>
+
+  <p>Layer 0 is a formal system the game defines and the software encodes. Layer 1 is the only layer that talks to an LLM at all — everything from Layer 2 down has no idea an AI is involved. A human GM running the same socket server, web client, and voice pipeline gets identical infrastructure. That separation is deliberate, and it's why every layer above Layer 0 is genuinely optional.</p>
+
+  <h2 id="rules-engine">Layer 0 — Rules Engine</h2>
+  <p>A deterministic d10 pool system: Outcome Matrix, Position, Stress/Boons, Obligation, and Timers. No hidden GM logic, no opaque heuristics — anything the AI GM decides, a human GM (or a script) could decide the same way from the same visible state.</p>
+
+  <h2 id="ai-gm">Layer 1 — AI GM Bot</h2>
+  <p>Driver-agnostic LLM orchestration over an adventure state machine, communicating exclusively through the tag-based GM protocol below. Swapping LLM providers, or removing the AI entirely, doesn't touch layers 2–4.</p>
+
+  <h2 id="tag-dsl">Tag DSL / GM Protocol</h2>
+  <p>Every GM action — scene transitions, skill check outcomes, state changes — is expressed as a small, typed, test-covered directive rather than free-form text. This is the highest-leverage place to contribute if you want to extend what the GM (human or AI) can express. See <a href="/contribute">Ways to Contribute</a>.</p>
+
+  <h2 id="transport">Layer 2 — Transport</h2>
+  <p>A socket server (Socket.IO plus plain WebSocket, room-based) that gives every client surface — web, desktop, terminal, Discord, Roll20, Foundry, Python — identical real-time event access to a session, regardless of which GM (human or AI) is running it.</p>
+
+  <h2>Layer 3 — Clients</h2>
+  <p>Web client, desktop client, terminal (ANSI) client, and bridges into Discord, Roll20, Foundry, and a Python CLI/GUI. Each one only needs to speak the room protocol from Layer 2.</p>
+
+  <h2 id="voice">Layer 4 — Voice Stack</h2>
+  <p>Chatterbox (TTS) → voice-adapter → RVC (voice cloning), fully optional and toggleable independently of everything else.</p>
+
+  <h2>Repositories</h2>
+  <ul>
+    <li><a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot">fates-edge-ai-gm-bot</a> — rules engine, AI GM, tag protocol, transport layer</li>
+    <li><a href="https://github.com/Chronophage-net/fates-edge-apps">fates-edge-apps</a> — web client, terminal client, voice tools, utilities</li>
+    <li><a href="https://github.com/Chronophage-net/fates-edge-docs">fates-edge-docs</a> — rulebook, SRD, Art Bible, worldbook, architecture doc</li>
+  </ul>
+</DocsLayout>
