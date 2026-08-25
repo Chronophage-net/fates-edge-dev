@@ -1,0 +1,33 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+---
+<DocsLayout title="Dev Workflow">
+  <h1>Dev Workflow</h1>
+  <p>Every contribution path runs through this portal first, then into the repo that actually owns the change. Here's the loop:</p>
+
+  <h2>1. Discuss</h2>
+  <p>Got an idea, a question, or aren't sure where something belongs? Start in <a href="https://github.com/Chronophage-net/fate-edge-dev/discussions">Discussions</a> — it's the lowest-friction place to float something before it's a formal ask.</p>
+
+  <h2>2. Find the right repo</h2>
+  <p>Fate's Edge is split across five repos by concern. The <a href="https://github.com/Chronophage-net/fate-edge-dev/wiki/Repo-Map">wiki's Repo Map</a> is the quick lookup; <a href="/architecture">Architecture</a> explains the layering behind the split.</p>
+
+  <h2>3. Open an issue</h2>
+  <p>Each repo has issue templates tuned to what actually lives there — a bug report for the AI GM reads differently than one for the web client or a rules erratum. Use the template; it's there so maintainers don't have to ask the same three clarifying questions every time.</p>
+
+  <h2>4. Open a PR</h2>
+  <p>Reference the issue. Keep it small and focused where you can — see <a href="/contribute">Ways to Contribute</a> for the areas most in need of hands, and each repo's PR template for what's expected (tests for the rules engine, transport layer, and Tag DSL; docs updates for anything contributor-facing).</p>
+
+  <h2>5. It lands somewhere durable</h2>
+  <p>Stable, versioned reference (architecture, contribution guide, Art Bible orientation, roadmap) lives on this portal. Living working notes — deep-dives, in-progress references, FAQs that change often — live on the <a href="https://github.com/Chronophage-net/fate-edge-dev/wiki">wiki</a>, editable without a PR review. Announcements and dev logs go to the <a href="https://blog.fates-edge.com">blog</a>.</p>
+
+  <div class="callout">
+    <strong>Quick links:</strong>
+    <ul style="margin: 0.75rem 0 0 1.2rem; color: var(--text);">
+      <li><a href="https://github.com/Chronophage-net/fate-edge-dev/discussions">Discussions</a></li>
+      <li><a href="https://github.com/Chronophage-net/fate-edge-dev/wiki">Wiki</a></li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot/issues/new/choose">File an issue — engine / AI GM</a></li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-apps/issues/new/choose">File an issue — clients</a></li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-docs/issues/new/choose">File an issue — rules / content</a></li>
+    </ul>
+  </div>
+</DocsLayout>

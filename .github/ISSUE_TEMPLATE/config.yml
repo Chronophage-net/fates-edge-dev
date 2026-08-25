@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discuss an idea first
+    url: https://github.com/Chronophage-net/fate-edge-dev/discussions
+    about: Ideas, questions, and general conversation.
+  - name: 🐛 Engine / client bugs
+    url: https://github.com/Chronophage-net/fates-edge-ai-gm-bot/issues/new/choose
+    about: Rules engine, AI GM, or transport-layer bugs belong in fates-edge-ai-gm-bot.
+  - name: 🖥️ Web / terminal client bugs
+    url: https://github.com/Chronophage-net/fates-edge-apps/issues/new/choose
+    about: Client-surface bugs belong in fates-edge-apps.

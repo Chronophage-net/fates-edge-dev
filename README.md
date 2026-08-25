@@ -40,3 +40,22 @@ src/
 ### Optional: embed Discussions inline
 
 If you'd rather show discussion threads inline on portal pages instead of just linking out, [giscus](https://giscus.app) turns this repo's Discussions into an embeddable comment widget (no separate backend — it's just a GitHub App + a `<script>` tag). Point it at `Chronophage-net/fate-edge-dev`, generate the embed snippet, and drop it into any `.astro` page.
+
+## Wiki
+
+`wiki/` in this repo holds drafted wiki pages (`Home.md`, `Getting-Started.md`, `Repo-Map.md`, `Tag-DSL-Reference.md`, `FAQ.md`) — GitHub wikis are their own git remote, so these aren't live until pushed there:
+
+```bash
+# One-time: Settings → Features → enable Wikis, then create any first page via the web UI
+# so the wiki repo exists, then:
+git clone git@github.com:Chronophage-net/fate-edge-dev.wiki.git /tmp/fedd-wiki
+cp wiki/*.md /tmp/fedd-wiki/
+cd /tmp/fedd-wiki
+git add -A && git commit -m "Seed wiki from repo draft" && git push
+```
+
+After that, edit wiki pages either directly on GitHub or by cloning `fate-edge-dev.wiki.git` again — they don't need PRs against this repo.
+
+## Community health files
+
+`.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md`, and `.github/FUNDING.yml` here match the equivalents in `fates-edge-ai-gm-bot`, `fates-edge-apps`, `fates-edge-docs`, and `fates-edge-blog` — each tuned to what that repo actually contains, all pointing back to this portal and to Discussions for anything cross-cutting.

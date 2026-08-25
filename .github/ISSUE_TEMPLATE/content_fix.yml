@@ -1,0 +1,16 @@
+name: Docs / Content Fix
+description: The architecture overview, contribute guide, roadmap, or design tokens page is wrong or out of date.
+labels: ["content"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's wrong or out of date?
+    validations:
+      required: true
