@@ -1,6 +1,6 @@
 # Contributing to Fate's Edge
 
-This repo (`fate-edge-dev`) is the developer portal itself — an Astro site at dev.fates-edge.com. PRs here are welcome for docs, design, and portal features.
+This repo (`fates-edge-dev`) is the developer portal itself — an Astro site at dev.fates-edge.com. PRs here are welcome for docs, design, and portal features.
 
 For contributing to the actual game systems, see the ["Ways to Contribute"](https://dev.fates-edge.com/contribute) page, which links into the relevant repo for each area:
 

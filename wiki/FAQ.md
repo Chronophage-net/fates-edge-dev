@@ -1,7 +1,7 @@
 # FAQ
 
 **Where do I start?**
-[Ways to Contribute](https://dev.fates-edge.com/contribute) on the dev portal, or say hello in [Discussions](https://github.com/Chronophage-net/fate-edge-dev/discussions) and describe what you're interested in.
+[Ways to Contribute](https://dev.fates-edge.com/contribute) on the dev portal, or say hello in [Discussions](https://github.com/Chronophage-net/fates-edge-dev/discussions) and describe what you're interested in.
 
 **Which repo does my bug belong in?**
 See [Repo Map](Repo-Map).

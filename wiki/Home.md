@@ -13,7 +13,7 @@ This wiki is for living, evolving reference material that changes too often (or 
 |---|---|
 | Understand the system design | [dev.fates-edge.com/architecture](https://dev.fates-edge.com/architecture) |
 | Find a way to contribute | [dev.fates-edge.com/contribute](https://dev.fates-edge.com/contribute) |
-| Ask a question or float an idea | [Discussions](https://github.com/Chronophage-net/fate-edge-dev/discussions) |
+| Ask a question or float an idea | [Discussions](https://github.com/Chronophage-net/fates-edge-dev/discussions) |
 | Report a bug or request a feature | The relevant repo's Issues (see [Repo Map](Repo-Map)) |
 | Look up or propose a working-notes doc | You're in the right place |
 

@@ -5,4 +5,4 @@
 
 
 ## Checklist
-- [ ] Discussed in [Discussions](https://github.com/Chronophage-net/fate-edge-dev/discussions) first, if non-trivial
+- [ ] Discussed in [Discussions](https://github.com/Chronophage-net/fates-edge-dev/discussions) first, if non-trivial

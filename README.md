@@ -1,4 +1,4 @@
-# fate-edge-dev
+# fates-edge-dev
 
 Developer portal for Fate's Edge, deployed to GitHub Pages at **dev.fates-edge.com**.
 
@@ -42,7 +42,7 @@ src/
 
 ### Optional: embed Discussions inline
 
-If you'd rather show discussion threads inline on portal pages instead of just linking out, [giscus](https://giscus.app) turns this repo's Discussions into an embeddable comment widget (no separate backend — it's just a GitHub App + a `<script>` tag). Point it at `Chronophage-net/fate-edge-dev`, generate the embed snippet, and drop it into any `.astro` page.
+If you'd rather show discussion threads inline on portal pages instead of just linking out, [giscus](https://giscus.app) turns this repo's Discussions into an embeddable comment widget (no separate backend — it's just a GitHub App + a `<script>` tag). Point it at `Chronophage-net/fates-edge-dev`, generate the embed snippet, and drop it into any `.astro` page.
 
 ## Wiki
 
@@ -51,13 +51,13 @@ If you'd rather show discussion threads inline on portal pages instead of just l
 ```bash
 # One-time: Settings → Features → enable Wikis, then create any first page via the web UI
 # so the wiki repo exists, then:
-git clone git@github.com:Chronophage-net/fate-edge-dev.wiki.git /tmp/fedd-wiki
+git clone git@github.com:Chronophage-net/fates-edge-dev.wiki.git /tmp/fedd-wiki
 cp wiki/*.md /tmp/fedd-wiki/
 cd /tmp/fedd-wiki
 git add -A && git commit -m "Seed wiki from repo draft" && git push
 ```
 
-After that, edit wiki pages either directly on GitHub or by cloning `fate-edge-dev.wiki.git` again — they don't need PRs against this repo.
+After that, edit wiki pages either directly on GitHub or by cloning `fates-edge-dev.wiki.git` again — they don't need PRs against this repo.
 
 ## Community health files
 
