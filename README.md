@@ -2,7 +2,7 @@
 
 Developer portal for Fate's Edge, deployed to GitHub Pages at **dev.fates-edge.com**.
 
-An Astro site: the call-for-contributors landing page, an architecture overview, the full **Art Bible** (copied in from `fates-edge-docs`, which is otherwise private — this is the one piece of that repo meant to be public) plus a Call for Art page with the fan-art policy, a design-tokens reference shared with the blog and web client, and a roadmap. The "forum" is GitHub Discussions on this repo, linked from the nav — see below for one-time setup.
+An Astro site: the call-for-contributors landing page, an architecture overview, the full **Art Bible** (copied in from our private rules/worldbook repo — this is the one piece of that repo meant to be public) plus a Call for Art page with the fan-art policy, a design-tokens reference shared with the web client, and a roadmap. The "forum" is GitHub Discussions on this repo, linked from the nav — see below for one-time setup.
 
 ## Local development
 
@@ -26,7 +26,7 @@ src/
   pages/call-for-art.astro    fan-art policy, submission process, licensing
   pages/design-tokens.astro
   pages/roadmap.astro
-  content/art/art-bible.md    the full Art Bible, copied in from fates-edge-docs
+  content/art/art-bible.md    the full Art Bible, copied in from our private docs repo
   styles/theme.css            shared token set, derived from app.css
 .github/
   workflows/deploy.yml        builds + deploys to Pages on push to main
@@ -38,7 +38,7 @@ src/
 1. **Pages:** Settings → Pages → Source → **GitHub Actions**.
 2. **Custom domain:** Settings → Pages → Custom domain → `dev.fates-edge.com` (the `public/CNAME` file ships this, but GitHub needs it set in the UI too so HTTPS enforcement works). Add a DNS `CNAME` record: `dev` → `<username>.github.io`.
 3. **Discussions ("the forum"):** Settings → General → Features → enable **Discussions**. Recommended categories: `Announcements` (maintainer-only posts), `Ideas`, `Q&A`, `Show and Tell`. The category form templates in `.github/DISCUSSION_TEMPLATE/` populate the "New Discussion" form for Ideas and Q&A automatically once Discussions is on.
-4. This repo can be **public** even though `fates-edge-blog` may stay private — GitHub Pages from a private repo needs Pro/Team/Enterprise, and a public dev portal + Discussions board is generally what you want for a contributor-facing site anyway.
+4. This repo can be **public** even though other project repos stay private — GitHub Pages from a private repo needs Pro/Team/Enterprise, and a public dev portal + Discussions board is generally what you want for a contributor-facing site anyway.
 
 ### Optional: embed Discussions inline
 
@@ -61,4 +61,4 @@ After that, edit wiki pages either directly on GitHub or by cloning `fate-edge-d
 
 ## Community health files
 
-`.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md`, and `.github/FUNDING.yml` here match the equivalents in `fates-edge-ai-gm-bot`, `fates-edge-apps`, `fates-edge-docs`, and `fates-edge-blog` — each tuned to what that repo actually contains, all pointing back to this portal and to Discussions for anything cross-cutting.
+`.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md`, and `.github/FUNDING.yml` here match the equivalents across the project's other repos — each tuned to what that repo actually contains, all pointing back to this portal and to Discussions for anything cross-cutting.

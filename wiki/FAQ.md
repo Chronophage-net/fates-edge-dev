@@ -13,4 +13,4 @@ For anything non-trivial, yes — or discuss it in Discussions first. Small fixe
 No — it's Layer 1 of the architecture and fully optional. A human GM gets the same rules engine, transport layer, and clients.
 
 **Where's the Art Bible?**
-[dev.fates-edge.com/art-bible](https://dev.fates-edge.com/art-bible) has the full document — it's the one part of `fates-edge-docs` (otherwise private) that's mirrored publicly on the portal.
+[dev.fates-edge.com/art-bible](https://dev.fates-edge.com/art-bible) has the full document — it's the one part of our private rules/worldbook repo that's mirrored publicly on the portal.

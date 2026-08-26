@@ -7,9 +7,7 @@ Most contributors only need one or two of these:
 ```bash
 git clone git@github.com:Chronophage-net/fates-edge-ai-gm-bot.git   # rules engine, AI GM, Tag DSL, transport
 git clone git@github.com:Chronophage-net/fates-edge-apps.git        # web client, terminal client, utilities
-git clone git@github.com:Chronophage-net/fates-edge-docs.git        # rulebook, SRD, Art Bible, worldbook
 git clone git@github.com:Chronophage-net/fate-edge-dev.git          # this portal + wiki
-git clone git@github.com:Chronophage-net/fates-edge-blog.git        # dev blog
 ```
 
 ## Which repo do I need?
@@ -26,4 +24,4 @@ See [Repo Map](Repo-Map) for the full breakdown, or the guided links on [Ways to
 ## Local dev quick reference
 
 - **`fates-edge-ai-gm-bot`** / **`fates-edge-apps`**: see each repo's own README for its install/test/run commands.
-- **`fate-edge-dev`** / **`fates-edge-blog`**: both are Astro sites — `npm install && npm run dev`.
+- **`fates-edge-dev`**: an Astro site — `npm install && npm run dev`.

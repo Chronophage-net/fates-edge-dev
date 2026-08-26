@@ -6,7 +6,6 @@ For contributing to the actual game systems, see the ["Ways to Contribute"](http
 
 - Rules engine, AI GM, Tag DSL, transport layer → [`fates-edge-ai-gm-bot`](https://github.com/Chronophage-net/fates-edge-ai-gm-bot)
 - Web client, terminal client, voice tools → [`fates-edge-apps`](https://github.com/Chronophage-net/fates-edge-apps)
-- Rulebook, SRD, Art Bible, worldbook → [`fates-edge-docs`](https://github.com/Chronophage-net/fates-edge-docs)
 
 ## Ground rules
 

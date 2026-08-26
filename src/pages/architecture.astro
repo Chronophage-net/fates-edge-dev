@@ -4,7 +4,7 @@ import DocsLayout from '../layouts/DocsLayout.astro';
 <DocsLayout title="Architecture">
   <h1>Systems Architecture</h1>
   <p>Fate's Edge is a system of systems: a tabletop ruleset, an LLM-driven Game Master built on top of it, a real-time transport fabric connecting a dozen client surfaces to that GM, and an optional voice pipeline layered on top of all of it.</p>
-  <p>The full write-up lives in <code>fates-edge-docs/ARCHITECTURE.md</code> (companion to <a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot/blob/main/DESIGN.md">fates-edge-ai-gm-bot's DESIGN.md</a>) — this page is the map, not the territory.</p>
+  <p>The full write-up lives in our private architecture doc (companion to <a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot/blob/main/DESIGN.md">fates-edge-ai-gm-bot's DESIGN.md</a>) — this page is the map, not the territory.</p>
 
   <pre><code>┌─────────────────────────────────────────────────────────────────────┐
 │  Layer 4 — Voice: Chatterbox (TTS) → voice-adapter → RVC (optional)  │
@@ -45,6 +45,5 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   <ul>
     <li><a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot">fates-edge-ai-gm-bot</a> — rules engine, AI GM, tag protocol, transport layer</li>
     <li><a href="https://github.com/Chronophage-net/fates-edge-apps">fates-edge-apps</a> — web client, terminal client, voice tools, utilities</li>
-    <li><a href="https://github.com/Chronophage-net/fates-edge-docs">fates-edge-docs</a> — rulebook, SRD, Art Bible, worldbook, architecture doc</li>
   </ul>
 </DocsLayout>
