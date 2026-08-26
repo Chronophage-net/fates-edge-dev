@@ -1,0 +1,62 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+
+// Lightweight seed of a "documents" area for the portal: a flat list of
+// downloadable/embeddable static assets under /public/press-kit/. Add an
+// entry here and drop the file in public/press-kit/ to publish a new one —
+// no build step or content collection needed for something this simple.
+const documents = [
+  {
+    title: "Fate's Edge Flyer",
+    description: 'A single-page, print-ready flyer for tabling, game stores, or handing to a friend. Self-contained HTML — open it, print it, or drop it on a table screen.',
+    file: '/press-kit/fates-edge-flyer.html',
+  },
+];
+---
+<DocsLayout title="Press Kit" description="Downloadable and embeddable promotional material for Fate's Edge.">
+  <h1>Press Kit</h1>
+  <p>Promotional material for sharing Fate's Edge with players, at a table, or in a store. Everything here is free to print, share, or remix — see the <a href="/call-for-art">Call for Art</a> page for the same terms as fan art.</p>
+
+  {documents.map((doc) => (
+    <div class="doc-card">
+      <div class="doc-card-header">
+        <h3>{doc.title}</h3>
+        <a class="btn btn-sm btn-secondary" href={doc.file} target="_blank" rel="noopener">Open / Download ↗</a>
+      </div>
+      <p>{doc.description}</p>
+      <iframe src={doc.file} title={doc.title} loading="lazy"></iframe>
+    </div>
+  ))}
+
+  <div class="callout">
+    <strong>Have something to add?</strong> A one-pager, a table-top card, a con handout — open a PR against <code>public/press-kit/</code> in this repo, or float the idea in <a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Discussions</a> first.
+  </div>
+</DocsLayout>
+
+<style>
+  .doc-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .doc-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .doc-card-header h3 {
+    margin: 0;
+    color: var(--gold);
+  }
+  .doc-card iframe {
+    width: 100%;
+    height: 520px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-top: 1rem;
+    background: #fff;
+  }
+</style>
