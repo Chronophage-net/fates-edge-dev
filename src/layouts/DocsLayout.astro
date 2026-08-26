@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Giscus from '../components/Giscus.astro';
 
 interface Props {
   title: string;
@@ -45,6 +46,7 @@ const nav = [
     </aside>
     <div class="docs-body">
       <slot />
+      <Giscus />
     </div>
   </div>
 </BaseLayout>
