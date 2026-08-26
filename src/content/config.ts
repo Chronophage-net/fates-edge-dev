@@ -9,4 +9,13 @@ const art = defineCollection({
   }),
 });
 
-export const collections = { art };
+const policy = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number().default(0),
+  }),
+});
+
+export const collections = { art, policy };

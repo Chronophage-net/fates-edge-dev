@@ -23,10 +23,13 @@ src/
   pages/workflow.astro
   pages/architecture.astro
   pages/art-bible.astro       renders content/art/art-bible.md in full
+  pages/community-content.astro renders content/policy/community-content-policy.md
+  pages/succession.astro       renders content/policy/succession.md
   pages/call-for-art.astro    fan-art policy, submission process, licensing
   pages/design-tokens.astro
   pages/roadmap.astro
   content/art/art-bible.md    the full Art Bible, copied in from our private docs repo
+  content/policy/              Community Content Program + Succession plan, copied in from our private docs repo
   styles/theme.css            shared token set, derived from app.css
 .github/
   workflows/deploy.yml        builds + deploys to Pages on push to main
