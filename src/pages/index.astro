@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="cta-hero">
     <div class="eyebrow">🚀 Call for Contributors</div>
     <h1>A modular, AI-optional TTRPG ecosystem — built for hackers, storytellers, and curious devs.</h1>
-    <p class="tagline">Fate's Edge is an open, extensible tabletop RPG platform — rules engine, AI GM, multi-client transport layer, voice stack, and VTT surfaces — all designed around one principle.</p>
+    <p class="tagline">This isn't "an RPG with a web app." It's a tabletop RPG whose rules, adventures, and campaign state are deliberately modeled so that different interfaces and different facilitators — human GM or AI, web client or your own tool — can run the exact same game.</p>
     <p class="principle">Every layer should be replaceable, hackable, and fun to build on.</p>
     <div class="btn-row">
       <a class="btn btn-gold" href="/contribute">Ways to Contribute</a>
@@ -16,6 +16,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <p class="section lead" style="margin-top:-1rem;">If you love clean architecture, real-time systems, game design, or AI-assisted storytelling, this project is a playground. We're looking for contributors who want to help shape the future of open TTRPG tech.</p>
+
+  <section class="section">
+    <h2>🧭 What do you want to build?</h2>
+    <p class="lead">You don't have to use our client. You don't have to use our GM. You don't have to use our VTT. You don't even have to use our interface. Pick a starting point — each one routes straight into the docs you actually need.</p>
+    <div class="card-grid">
+      <a class="feature-card" href="/architecture#transport" style="display:block; text-decoration:none;"><h3>Build a client</h3><p>Web, mobile, terminal — anything that speaks the room protocol.</p></a>
+      <a class="feature-card" href="/architecture#ai-gm" style="display:block; text-decoration:none;"><h3>Build an AI GM</h3><p>Swap in a new LLM driver, or write your own from scratch.</p></a>
+      <a class="feature-card" href="/contribute" style="display:block; text-decoration:none;"><h3>Build an adventure</h3><p>JSON-based, rules-native, playable under any GM.</p></a>
+      <a class="feature-card" href="/architecture#transport" style="display:block; text-decoration:none;"><h3>Build a VTT integration</h3><p>Foundry, Roll20, or your own maps and tokens.</p></a>
+      <a class="feature-card" href="/architecture#transport" style="display:block; text-decoration:none;"><h3>Build a Discord bot</h3><p>The transport layer doesn't care where events come from.</p></a>
+      <a class="feature-card" href="/architecture#rules-engine" style="display:block; text-decoration:none;"><h3>Build campaign tooling</h3><p>Trackers, dashboards, anything that reads campaign state.</p></a>
+      <a class="feature-card" href="/architecture#tag-dsl" style="display:block; text-decoration:none;"><h3>Extend the rules</h3><p>New GM directives and mechanical hooks via the Tag DSL.</p></a>
+      <a class="feature-card" href="/architecture" style="display:block; text-decoration:none;"><h3>Connect your own service</h3><p>Not sure where you fit? Start with the architecture map.</p></a>
+    </div>
+
+    <pre><code>              Core Rules Engine
+                     │
+               Campaign State
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+     Web            VTT          Discord
+      │              │              │
+   AI GM          Your App      Your Tool</code></pre>
+
+    <p class="lead">Every box above is optional except the middle column. Swap the client, swap who's GMing, swap the transport surface — the rules and the campaign state underneath don't move. That's <a href="https://blog.fates-edge.com/choose-your-modality">Choose Your Modality</a>, as an API philosophy, not just a player-facing one.</p>
+  </section>
 
   <section class="section">
     <h2>🌐 What makes Fate's Edge special</h2>
