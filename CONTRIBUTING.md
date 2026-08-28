@@ -12,6 +12,7 @@ For contributing to the actual game systems, see the ["Ways to Contribute"](http
 - Open an issue before a large PR — it saves everyone time.
 - Small, focused PRs over big ones where possible.
 - Be kind. See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+- **No AI-generated art.** This applies to the Art Bible, any illustrations submitted via [Call for Art](https://dev.fates-edge.com/art-bible#call-for-art), and anything else visual on the portal or blog. See the [No AI Art Policy](/no-ai-art) for the reasoning and specifics — it's a hard line, not a preference.
 
 ## Local development (this repo)
 
