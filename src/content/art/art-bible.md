@@ -284,12 +284,12 @@ These colors and icons are live in the app's data files — treat them as locked
 
 | Faction | Color | Icon | Tier | Notes |
 |---|---|---|---|---|
-| The Velvet Court | `#8b6bb5` (soft violet) | 🎭 mask | Paramount | Silkstrand's underworld power; masquerade/theater motifs, information-broker aesthetic |
-| The Iron League | `#c45a5a` (dull red) | ⚔️ crossed blades | Regional | Martial/mercenary alliance energy |
-| Ecktorian Censorate | `#d48a5a` (burnt orange) | ⚖️ scale | Regional | Bureaucratic-judicial, ties visually to the Everflame's judgment themes and Ecktoria's lie-detecting fire |
-| Gray Ash Ykrul | `#5a8ab5` (steel blue) | 🐺 wolf | Regional | Steppe-nomad wolf-standard imagery |
-| House Contarini (Vilikari) | `#2980b9` (deep blue) | 🏛️ pillar | Regional | Old-money civic/legal house |
-| Black Banner Mercenaries | `#2c3e50` (near-black slate) | 🏴 black flag | Regional | Deliberately unadorned — a company that trades in professionalism, not heraldry |
+| The Velvet Court | `#8b6bb5` (soft violet) | mask | Paramount | Silkstrand's underworld power; masquerade/theater motifs, information-broker aesthetic |
+| The Iron League | `#c45a5a` (dull red) | crossed blades | Regional | Martial/mercenary alliance energy |
+| Ecktorian Censorate | `#d48a5a` (burnt orange) | scale | Regional | Bureaucratic-judicial, ties visually to the Everflame's judgment themes and Ecktoria's lie-detecting fire |
+| Gray Ash Ykrul | `#5a8ab5` (steel blue) | wolf | Regional | Steppe-nomad wolf-standard imagery |
+| House Contarini (Vilikari) | `#2980b9` (deep blue) | pillar | Regional | Old-money civic/legal house |
+| Black Banner Mercenaries | `#2c3e50` (near-black slate) | black flag | Regional | Deliberately unadorned — a company that trades in professionalism, not heraldry |
 
 When designing new factions for the app, follow this pattern: one hex color, one emoji-renderable icon, and a tier (Regional/Paramount) — keep new factions' palettes distinct from this table at a glance.
 

@@ -1,94 +1,120 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const DISCORD = 'https://discord.gg/etmb7DYbj';
+const DISCUSS = 'https://github.com/Chronophage-net/fates-edge-dev/discussions';
 ---
-<BaseLayout title="Call for Contributors">
+<BaseLayout title="Welcome">
   <div class="cta-hero">
-    <div class="eyebrow">🚀 Call for Contributors</div>
-    <h1>A modular, AI-optional TTRPG ecosystem — built for hackers, storytellers, and curious devs.</h1>
-    <p class="tagline">Fate's Edge is an open, extensible tabletop RPG platform — rules engine, AI GM, multi-client transport layer, voice stack, and VTT surfaces — all designed around one principle.</p>
-    <p class="principle">Every layer should be replaceable, hackable, and fun to build on.</p>
+    <div class="eyebrow">The workshop door is open</div>
+    <h1>Come in and put your coat somewhere.</h1>
+    <p class="tagline">
+      This is where Fate&rsquo;s Edge actually gets made &mdash; the rules engine, the clients, the AI GM
+      that you never have to turn on, and the arguments about all three. It is open, it is unfinished
+      on purpose, and there is more of it than one person can hold.
+    </p>
+    <p class="principle">Every layer should be replaceable, hackable, and worth someone else&rsquo;s time.</p>
     <div class="btn-row">
-      <a class="btn btn-gold" href="/contribute">Ways to Contribute</a>
-      <a class="btn btn-outline" href="/architecture">Read the Architecture</a>
-      <a class="btn btn-outline" href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Join the Discussion</a>
-      <a class="btn btn-outline" href="https://discord.gg/etmb7DYbj">Join the Discord</a>
+      <a class="btn btn-gold" href="#ways-in">Find your way in</a>
+      <a class="btn btn-outline" href="/architecture">Read the architecture</a>
+      <a class="btn btn-outline" href={DISCUSS}>Say hello</a>
+      <a class="btn btn-outline" href={DISCORD}>Discord</a>
     </div>
   </div>
 
-  <p class="section lead" style="margin-top:-1rem;">If you love clean architecture, real-time systems, game design, or AI-assisted storytelling, this project is a playground. We're looking for contributors who want to help shape the future of open TTRPG tech.</p>
-
   <section class="section">
-    <h2>🌐 What makes Fate's Edge special</h2>
-    <div class="card-grid">
-      <div class="feature-card"><span class="icon">🎲</span><h3>One elegant resolution mechanic</h3><p>Easy to extend, easy to automate.</p></div>
-      <div class="feature-card"><span class="icon">⚙️</span><h3>Deterministic rules engine</h3><p>No hidden GM logic, no opaque heuristics.</p></div>
-      <div class="feature-card"><span class="icon">🔌</span><h3>Interoperable transport layer</h3><p>Web, desktop, terminal, Discord, Roll20, Foundry, Python.</p></div>
-      <div class="feature-card"><span class="icon">🏷️</span><h3>Tag-based GM protocol</h3><p>Safe, test-covered, and easy to extend.</p></div>
-      <div class="feature-card"><span class="icon">🤖</span><h3>Modular AI GM</h3><p>Driver-agnostic, state-machine-driven, and fully optional.</p></div>
-      <div class="feature-card"><span class="icon">🎙️</span><h3>Voice pipeline</h3><p>TTS, ambience, and cloning — all toggleable.</p></div>
-      <div class="feature-card"><span class="icon">🧱</span><h3>Layered architecture</h3><p>Every subsystem can be swapped without breaking the rest.</p></div>
+    <div class="callout">
+      <strong>Before anything else</strong>
+      <p style="margin:0.6rem 0 0;">
+        I am one person. I read every issue and every pull request, usually within a day or two, and I
+        have never once been annoyed that someone opened one. If you are sitting on a question because it
+        seems too small, it is not too small. Ask it in <a href={DISCUSS}>Discussions</a> or on
+        <a href={DISCORD}>Discord</a> and I will answer.
+      </p>
     </div>
-    <p class="lead">If you enjoy building systems that feel alive, Fate's Edge is your kind of project.</p>
   </section>
 
-  <section class="section">
-    <h2>🛠️ Ways you can contribute</h2>
+  <section class="section" id="ways-in">
+    <h2>Three ways in</h2>
+    <p class="lead">Most projects like this only have a door for developers. This one has three, and none of them is the service entrance.</p>
     <div class="card-grid">
-      <div class="feature-card"><h3>Extend the Tag DSL</h3><p>Add new GM directives, narrative tools, or mechanical hooks.</p></div>
-      <div class="feature-card"><h3>Build new client surfaces</h3><p>Mobile app, Slack bot, custom VTT — anything that speaks the room protocol.</p></div>
-      <div class="feature-card"><h3>Add new LLM drivers</h3><p>Anthropic, Groq, Gemini, local models.</p></div>
-      <div class="feature-card"><h3>Improve the transport layer</h3><p>Event parity, reliability, scaling.</p></div>
-      <div class="feature-card"><h3>Author adventure modules</h3><p>JSON-based, rules-native, AI-optional.</p></div>
-      <div class="feature-card"><h3>Expand the voice stack</h3><p>New TTS engines, ambience systems, or adapters.</p></div>
-      <div class="feature-card"><h3>Enhance the web client</h3><p>VTT tools, offline mode, UI polish.</p></div>
-      <div class="feature-card"><h3>Contribute to the terminal client</h3><p>ANSI UI, WS protocol, dice UX.</p></div>
-      <div class="feature-card"><h3>Write docs and examples</h3><p>Tutorials, diagrams, onboarding guides.</p></div>
+      <div class="door">
+        <h3>You want to build things</h3>
+        <p>
+          A deterministic rules engine with no hidden GM logic, a transport layer that already speaks
+          web, terminal, Discord, Roll20, Foundry and Python, a tag-based GM protocol, and a modular AI
+          GM that is driver-agnostic and entirely optional. Every subsystem is small enough to read in
+          an afternoon.
+        </p>
+        <p><a href="/architecture">Architecture</a> &middot; <a href="/contribute">Ways to contribute</a> &middot; <a href="/workflow">How work moves</a></p>
+      </div>
+      <div class="door">
+        <h3>You want to play it and tell me what broke</h3>
+        <p>
+          Playtesters are not a QA tier here. Most of what has changed in the last year changed because
+          somebody ran a session and said the middle of it dragged, or that a rule read one way at the
+          table and another way on the page. You do not need to file a good bug report. &ldquo;This bit
+          was confusing and here is roughly where&rdquo; is genuinely enough.
+        </p>
+        <p><a href={DISCORD}>Bring it to Discord</a> &middot; <a href={DISCUSS}>or open a discussion</a></p>
+      </div>
+      <div class="door">
+        <h3>You design, write, or draw</h3>
+        <p>
+          Adventure modules are JSON, rules-native, and AI-optional &mdash; you can write one without
+          touching a line of engine code. The setting has an art bible and a community content policy
+          that is meant to let you publish your own work, not to fence it off.
+        </p>
+        <p><a href="/art-bible">Art bible</a> &middot; <a href="/call-for-art">Call for art</a> &middot; <a href="/community-content">Community content</a></p>
+      </div>
     </div>
-    <p class="lead">Whether you're a seasoned engineer or a curious hobbyist, there's a place for you here. See the full <a href="/contribute">Ways to Contribute guide</a> for guided links into each area.</p>
   </section>
 
   <section class="section">
     <div class="callout">
-      <strong>🤝 Help wanted: someone who knows how to build a community</strong>
-      <p style="margin: 0.6rem 0 0;">Architecture I can do. Moderation, onboarding, and keeping a growing <a href="https://discord.gg/etmb7DYbj">Discord</a> safe and welcoming? That's not my skill set, and right now it's just me guessing. If that's something you're good at, see the <a href="/contribute#community-care">full ask on the Contribute page</a> — I'd really like the help.</p>
+      <strong>The one thing I genuinely cannot do myself</strong>
+      <p style="margin:0.6rem 0 0;">
+        Architecture I can manage. Moderation, onboarding, and keeping a growing
+        <a href={DISCORD}>Discord</a> safe and welcoming is not my skill set, and at the moment it is me
+        guessing. If that is the thing you are actually good at, it is the most useful job on this
+        project and nobody is doing it. See the <a href="/contribute#community-care">full ask</a>.
+      </p>
     </div>
   </section>
 
   <section class="section">
-    <h2>🔍 What contributors can expect</h2>
+    <h2>What you can expect from me</h2>
     <div class="card-grid">
-      <div class="feature-card"><h3>Real boundaries</h3><p>A clear architecture, not a tangle.</p></div>
-      <div class="feature-card"><h3>A responsive maintainer</h3><p>Nick reads every issue and PR.</p></div>
-      <div class="feature-card"><h3>A safety net</h3><p>A test-covered core that makes contributions safe.</p></div>
-      <div class="feature-card"><h3>A welcoming community</h3><p>Builders and storytellers, side by side.</p></div>
-      <div class="feature-card"><h3>Fun to hack on</h3><p>Not just functional — enjoyable.</p></div>
+      <div class="feature-card"><h3>Clear boundaries</h3><p>A layered architecture rather than a tangle. You can change one thing without reading everything.</p></div>
+      <div class="feature-card"><h3>A reply</h3><p>Every issue and PR gets read by a human, which at present is the only kind of person here.</p></div>
+      <div class="feature-card"><h3>A safety net</h3><p>A test-covered core, so a first contribution is unlikely to break something quietly.</p></div>
+      <div class="feature-card"><h3>Credit</h3><p>Your name on what you made, and a licence that lets you keep making it elsewhere.</p></div>
     </div>
-    <p class="lead">This isn't a monolithic engine. It's a system of systems, each small enough to understand and big enough to matter.</p>
   </section>
 
   <section class="section">
     <div class="callout">
-      <strong>🌱 How to get started</strong>
-      <ol style="margin: 0.75rem 0 0 1.2rem; color: var(--text);">
-        <li>Clone the repos below.</li>
-        <li>Read the <a href="/architecture">architecture overview</a>.</li>
-        <li>Pick a subsystem that sparks your interest.</li>
-        <li>Open an issue or draft a PR — even tiny contributions are welcome.</li>
-        <li><a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Join the conversation</a>, share ideas, and help shape the future of the project.</li>
-        <li>See the full <a href="/workflow">dev workflow</a> — how Discuss → Issue → PR maps onto these repos, and where the <a href="https://github.com/Chronophage-net/fates-edge-dev/wiki">wiki</a> fits in.</li>
+      <strong>Starting from nothing</strong>
+      <ol style="margin:0.75rem 0 0 1.2rem; color:var(--text);">
+        <li>Clone whichever repo below matches the door you came in by.</li>
+        <li>Read the <a href="/architecture">architecture overview</a> &mdash; it is short.</li>
+        <li>Pick the subsystem that looked interesting and ignore the rest for now.</li>
+        <li>Open an issue or a draft PR. Small ones are welcome and are how most people start.</li>
+        <li>Check the <a href="/workflow">workflow</a> for how Discuss &rarr; Issue &rarr; PR maps onto the repos.</li>
       </ol>
     </div>
     <ul class="repo-list">
-      <li><a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot">github.com/Chronophage-net/fates-edge-ai-gm-bot</a> — rules engine, AI GM, transport layer</li>
-      <li><a href="https://github.com/Chronophage-net/fates-edge-apps">github.com/Chronophage-net/fates-edge-apps</a> — web client, terminal client, tools</li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot">fates-edge-ai-gm-bot</a> &mdash; rules engine, AI GM, transport layer</li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-apps">fates-edge-apps</a> &mdash; web client, terminal client, tools</li>
     </ul>
   </section>
 
-  <section class="section" style="text-align:center; padding-block: 1rem 3rem;">
-    <h2 style="border:none;">💬 Final note</h2>
-    <p class="lead" style="margin: 0 auto;">Fate's Edge is a love letter to the TTRPG hobby — built to be shared, remixed, extended, and enjoyed. If you want to help build the next generation of open tabletop tools, we'd be thrilled to have you.</p>
-    <div class="btn-row" style="justify-content:center; margin-top: 1rem;">
-      <a class="btn btn-gold" href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Say hello in Discussions</a>
+  <section class="section" style="text-align:center; padding-block:1rem 3rem;">
+    <p class="lead" style="margin:0 auto;">
+      The game is free, in every sense that matters and most of the ones that do not. If you build
+      something on top of it, I would like to see it.
+    </p>
+    <div class="btn-row" style="justify-content:center; margin-top:1rem;">
+      <a class="btn btn-gold" href={DISCUSS}>Say hello in Discussions</a>
     </div>
   </section>
 </BaseLayout>

@@ -5,24 +5,24 @@ interface Props {
   title: string;
   description?: string;
 }
-const { title, description = "The developer portal for Fate's Edge — a modular, AI-optional TTRPG ecosystem. Architecture docs, contribution guides, and the open dev discussion." } = Astro.props;
+const { title, description = "Where Fate's Edge gets made. Architecture, contribution guides, playtest notes, and the open dev discussion — for developers, playtesters and designers alike." } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.85em%22 font-size=%2290%22 fill=%22%23c9a227%22>&#10022;</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <title>{title} · Fate's Edge Dev</title>
   <meta name="description" content={description} />
 </head>
 <body>
   <header class="site-header">
     <div class="wrap" style="max-width:1100px;">
-      <a class="brand" href="/"><span class="mark">🛠</span> Fate's Edge <span style="color:var(--text3); font-weight:400;">/ dev</span></a>
+      <a class="brand" href="/"><span class="mark" aria-hidden="true">&#10022;</span> Fate's Edge <span style="color:var(--text3); font-weight:400;">/ dev</span></a>
       <nav class="nav">
         <a href="/architecture">Architecture</a>
         <a href="/contribute">Contribute</a>
@@ -41,7 +41,7 @@ const { title, description = "The developer portal for Fate's Edge — a modular
     <slot />
   </main>
   <footer class="site-footer">
-    <div class="wrap">Fate's Edge is a love letter to the TTRPG hobby — built to be shared, remixed, extended, and enjoyed. · <a href="https://github.com/Chronophage-net">GitHub</a> · <a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Discussions</a> · <a href="https://discord.gg/etmb7DYbj">Discord</a> · <a href="https://ko-fi.com/chronophage">Support on Ko-fi</a></div>
+    <div class="wrap">Built in the open, so that it outlives me. · <a href="https://github.com/Chronophage-net">GitHub</a> · <a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Discussions</a> · <a href="https://discord.gg/etmb7DYbj">Discord</a> · <a href="https://ko-fi.com/chronophage">Support on Ko-fi</a></div>
   </footer>
 </body>
 </html>

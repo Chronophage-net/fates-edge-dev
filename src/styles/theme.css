@@ -6,33 +6,33 @@
    type) rather than a full copy of the app shell's CSS.
    ============================================================ */
 :root {
-  --bg: #0f1117;
-  --bg2: #161823;
-  --bg3: #1c1f2e;
-  --bg4: #232636;
-  --bg-glass: rgba(22, 24, 35, 0.85);
+  --bg: #0b0d12;
+  --bg2: #12141c;
+  --bg3: #181b25;
+  --bg4: #212533;
+  --bg-glass: rgba(18, 20, 28, 0.88);
 
-  --text: #e2e4f0;
-  --text2: #8b8fa3;
-  --text3: #767b93;
-  --text-inverse: #0f1117;
+  --text: #e8e3d6;
+  --text2: #a49d8b;
+  --text3: #8b8573;
+  --text-inverse: #0b0d12;
 
-  --gold: #f0a500;
-  --gold-light: #ffbf2a;
-  --gold-dark: #c47f00;
-  --gold-glow: rgba(240, 165, 0, 0.15);
+  --gold: #c9a227;
+  --gold-light: #e3bd48;
+  --gold-dark: #8f6f18;
+  --gold-glow: rgba(201, 162, 39, 0.14);
 
-  --red: #e74c3c;
-  --green: #2ecc71;
-  --blue: #3498db;
-  --purple: #9b59b6;
+  --red: #9c3232;
+  --green: #4a7c68;
+  --blue: #41708f;
+  --purple: #6b4a7d;
 
-  --border: rgba(42, 46, 64, 0.6);
-  --border-light: rgba(255, 255, 255, 0.06);
+  --border: rgba(72, 64, 48, 0.55);
+  --border-light: rgba(232, 227, 214, 0.07);
 
   --shadow: rgba(0, 0, 0, 0.35);
   --shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 8px 32px rgba(240, 165, 0, 0.08);
+  --shadow-glow: 0 8px 32px rgba(201, 162, 39, 0.07);
 
   --radius: 12px;
   --radius-sm: 6px;
@@ -42,22 +42,23 @@
   --content-max-width: 780px;
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html.light {
-  --bg: #f8f6fa;
-  --bg2: #eeeaef;
-  --bg3: #e3dfe6;
-  --bg4: #d5d0d8;
-  --text: #1e1a24;
-  --text2: #5a5560;
-  --text3: #736e79;
-  --text-inverse: #f8f6fa;
-  --gold: #b8860b;
-  --gold-light: #d4a017;
-  --gold-dark: #9a7208;
+  --bg: #f4efe2;
+  --bg2: #ebe4d3;
+  --bg3: #e0d8c4;
+  --bg4: #d2c8b1;
+  --text: #231d14;
+  --text2: #5c5342;
+  --text3: #6e6552;
+  --text-inverse: #f4efe2;
+  --gold: #7a5d0d;
+  --gold-light: #96731a;
+  --gold-dark: #5c4608;
   --gold-glow: rgba(184, 134, 11, 0.12);
   --border: rgba(180, 170, 185, 0.5);
   --border-light: rgba(255, 255, 255, 0.2);
@@ -247,3 +248,33 @@ article.post a { color: var(--gold-light); }
   color: var(--text);
   font-size: 1.05rem;
 }
+
+
+/* --- display face for anything that speaks; sans stays for dense UI --- */
+h1, h2, h3, .brand, .eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.eyebrow { font-variant: small-caps; letter-spacing: 0.14em; color: var(--text3); }
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; }
+
+/* vellum ground, gradients only — no art, no extra requests */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(201,162,39,0.05), transparent 60%),
+    radial-gradient(100% 100% at 50% 120%, rgba(0,0,0,0.45), transparent 55%);
+}
+html.light body::before {
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(122,93,13,0.06), transparent 60%),
+    radial-gradient(100% 100% at 50% 120%, rgba(90,70,30,0.07), transparent 55%);
+}
+main, .site-header, .site-footer { position: relative; z-index: 1; }
+
+/* a door-sign block for the three ways in */
+.door { border:1px solid var(--border); border-left:2px solid var(--gold-dark);
+        border-radius: var(--radius-sm); padding:1rem 1.15rem; background:var(--bg2); }
+.door h3 { margin:0 0 .35rem; font-size:1.15rem; }
+.door p  { margin:0 0 .5rem; color:var(--text2); }
