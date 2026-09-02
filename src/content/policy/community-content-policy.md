@@ -113,6 +113,16 @@ invent skills, clock sizes, or difficulty ladders stop being playable
 alongside published material, which is the one thing a supplement really
 shouldn't do.
 
+**Then hand it to someone who'll argue with the framing.** Showing your
+arithmetic catches wrong answers. It does not catch wrong *questions* —
+those get answered well, correctly, and at length, which is exactly what
+makes them survive review by their own author. The People's Die shipped
+with a framing that called a past position "wrong"; a reviewer pointed
+out that nothing factual had been wrong, and that calling it so avoided
+naming the actual error, which was answering an affordability question
+when the live question was friction. That took an outside reader one
+paragraph and the author several weeks. Budget for it.
+
 **A worked example.** *The People's Die* — a complete d6 conversion,
 written as a joke and playable straight — is published as the reference
 model for this. It states every departure from the core rules, explains
