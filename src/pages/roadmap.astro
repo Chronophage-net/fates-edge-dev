@@ -82,6 +82,7 @@ function fmtDate(iso) {
     <li><strong>A fourth Peoples and Cultures volume.</strong> Twelve cultures still have no write-up — Ecktoria, Vhasia, Kahfagia, Silkstrand, Ashaan, Dhahara, Ubral, Fhara, Oshiira, Trow, Hag/Morag and the Linn. The source material for these is thin, so this one is authoring rather than conversion.</li>
     <li><strong>The canonical-skill sweep.</strong> Every roll, prerequisite and NPC block in the Player's Guide checked against the sixteen skills. Tedious, mechanical, and exactly the kind of thing that's easy to review a PR for.</li>
     <li><strong>Two manifest generators disagree.</strong> <code>sync_data_to_consumers.py</code> and <code>generate-manifests.js</code> emit different bytes for the same file, so the apps tree flaps on every sync. Small, self-contained, and annoying to whoever touches it next.</li>
+    <li><strong>A character migration tool.</strong> The skill list consolidated from sixteen to twelve, and the web client folds retired skills into their successors on load. That covers characters in the app; it does not cover a sheet somebody wrote out by hand, a PDF export, or a third-party tool. A small standalone converter &mdash; paste a character, get the twelve-skill version back &mdash; would close that, and is a contained first contribution.</li>
     <li><strong>Heritage isn't applied by the dice roller.</strong> <code>roller.js</code> clamps Position correctly but doesn't read a character's Affinity or Limit, so players apply it by hand. A contained web-client task.</li>
   </ul>
 
