@@ -21,19 +21,66 @@ import DocsLayout from '../layouts/DocsLayout.astro';
 │            adventure state machine                                   │
 ├─────────────────────────────────────────────────────────────────────┤
 │  Layer 0 — Rules Engine: d10 pool, Outcome Matrix, Position, SB,     │
-│            Boons, Obligation, Timers                                 │
+│            Boons, Fatigue, Obligation, Timers                        │
 └─────────────────────────────────────────────────────────────────────┘</code></pre>
 
   <p>Layer 0 is a formal system the game defines and the software encodes. Layer 1 is the only layer that talks to an LLM at all — everything from Layer 2 down has no idea an AI is involved. A human GM running the same socket server, web client, and voice pipeline gets identical infrastructure. That separation is deliberate, and it's why every layer above Layer 0 is genuinely optional.</p>
 
   <h2 id="rules-engine">Layer 0 — Rules Engine</h2>
-  <p>A deterministic d10 pool system: Outcome Matrix, Position, Stress/Boons, Obligation, and Timers. No hidden GM logic, no opaque heuristics — anything the AI GM decides, a human GM (or a script) could decide the same way from the same visible state.</p>
+  <p>A deterministic d10 pool system: Outcome Matrix, Position, Boons, Fatigue, Obligation, and Timers. No hidden GM logic, no opaque heuristics — anything the AI GM decides, a human GM (or a script) could decide the same way from the same visible state.</p>
 
   <h2 id="ai-gm">Layer 1 — AI GM Bot</h2>
   <p>Driver-agnostic LLM orchestration over an adventure state machine, communicating exclusively through the tag-based GM protocol below. Swapping LLM providers, or removing the AI entirely, doesn't touch layers 2–4.</p>
 
   <h2 id="tag-dsl">Tag DSL / GM Protocol</h2>
-  <p>Every GM action — scene transitions, skill check outcomes, state changes — is expressed as a small, typed, test-covered directive rather than free-form text. This is the highest-leverage place to contribute if you want to extend what the GM (human or AI) can express. See <a href="/contribute">Ways to Contribute</a>.</p>
+  <p>Every GM action — scene transitions, skill check outcomes, state changes — is expressed as a small, typed, test-covered directive rather than free-form text, emitted inline in narration and parsed out by <a href="https://github.com/Chronophage-net/fates-edge-ai-gm-bot/blob/main/modules/commands/process-tags.js"><code>modules/commands/process-tags.js</code></a>.</p>
+
+  <p>The set is <strong>24 directives</strong> (25 spellings — <code>ADD</code> is an alias of <code>APPLY</code>) for the entire game. They sort into four groups, and the first three — the whole resolution system — account for eleven of them.</p>
+
+  <h3>The roll</h3>
+  <table>
+    <thead><tr><th>Directive</th><th>Does</th></tr></thead>
+    <tbody>
+      <tr><td><code>[CALL FOR ROLL "what" Attr+Skill DV n Position "note"]</code></td><td>Asks a player to roll. Does <em>not</em> resolve it.</td></tr>
+      <tr><td><code>[ROLL "what" Attr+Skill DV n Position]</code></td><td>Rolls for an NPC or the world.</td></tr>
+      <tr><td><code>[SET DV n]</code></td><td>Sets difficulty. 2–5; above 5 is a defect.</td></tr>
+      <tr><td><code>[SET POSITION name]</code></td><td>Dominant / Controlled / Desperate.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The clock</h3>
+  <table>
+    <thead><tr><th>Directive</th><th>Does</th></tr></thead>
+    <tbody>
+      <tr><td><code>[TIMER "name" segments "what happens"]</code></td><td>Starts a clock. Legal sizes are 4, 6, 8, 10.</td></tr>
+      <tr><td><code>[TICK TIMER "name" n]</code></td><td>Advances one.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The economy</h3>
+  <table>
+    <thead><tr><th>Directive</th><th>Does</th></tr></thead>
+    <tbody>
+      <tr><td><code>[ADD SB n]</code> / <code>[SPEND SB n]</code></td><td>The GM's Story Beat pool.</td></tr>
+      <tr><td><code>[APPLY HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH who n]</code></td><td>Every per-character track, through one verb.</td></tr>
+      <tr><td><code>[ENCOUNTER START "name" type]</code> / <code>[ENCOUNTER RESOLVE clean|partial|miss "notes"]</code></td><td>Frames and closes an encounter against the Outcome Matrix.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The table state</h3>
+  <p>The remaining thirteen are bookkeeping — <code>NPC CREATE</code>, <code>NPC CAST</code>, <code>NPC LOCATION</code>, <code>FACT</code>, <code>REVEAL</code>, <code>HIDE</code>, <code>SCENE COMPLETE</code>, <code>MOOD</code>, <code>CROWN</code>, <code>DRAW</code>, <code>TOKEN MOVE</code>, <code>TOKEN REMOVE</code>, <code>LOOKUP RULE</code> — recording who is present, what is known, and where things are. This is the group that grows with content rather than with rules.</p>
+
+  <div class="callout">
+    <strong>Notice what isn't here.</strong> There is no <code>[CRAFT]</code>, <code>[SIEGE]</code>, <code>[TRAVEL]</code>, <code>[RITUAL]</code> or <code>[MASS COMBAT]</code> directive, and all of those are fully supported. They didn't need one: crafting, travel, downtime, magic and warfare are each a roll that fills a clock and resolves on the Outcome Matrix. An army is a Follower with a Capability and two clocks; a general's order is an ordinary roll filling an objective by two segments, one, or none. Adding the whole warfare module cost this protocol zero new verbs and its test suite zero new cases.
+  </div>
+
+  <p>That is the practical payoff of a self-similar ruleset: the protocol's size is proportional to the number of things the game <em>is</em> (four), not to the number of things it can <em>do</em>. Which gives contributors a heuristic worth applying before opening a PR:</p>
+
+  <blockquote>
+    <p>If your extension needs a new tag verb, you have probably not found a gap in the protocol. You have probably invented a mechanic you didn't need. Check first whether the thing you want is a roll, a clock, an outcome, or a piece of table state wearing a costume.</p>
+  </blockquote>
+
+  <p>Extensions to the <em>narrative</em> surface — new hooks into world state, better ergonomics for things the protocol expresses clumsily — are genuinely welcome. See <a href="/contribute">Ways to Contribute</a>, and the <a href="https://blog.fates-edge.com/why-a-tag-based-gm-protocol">design write-up</a> for the longer argument.</p>
 
   <h2 id="transport">Layer 2 — Transport</h2>
   <p>A socket server (Socket.IO plus plain WebSocket, room-based) that gives every client surface — web, desktop, terminal, Discord, Roll20, Foundry, Python — identical real-time event access to a session, regardless of which GM (human or AI) is running it.</p>

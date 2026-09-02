@@ -81,6 +81,49 @@ product description is fine):
 > Edge" is a trademark of Nicholas A. Gasper and is used here only to
 > indicate compatibility.*
 
+## What Good Looks Like
+
+*This section is advice, not terms. Nothing here is a condition of the
+program — you can ignore all of it and still be fully within your rights.*
+
+The permission above covers what you're **allowed** to publish. It says
+nothing about what makes a supplement usable, and after writing a fair
+number of them, three things seem to matter more than the rest:
+
+**Say what you changed, say why, and show your arithmetic.** A variant
+that states its departures plainly can be argued with, adopted, forked,
+or improved. One that hides them can only be trusted or distrusted, and
+neither is much use to a table trying to decide whether to run it.
+
+**Check the curve, not the midpoint.** If you're retuning any part of the
+dice economy, test it at a two-die pool *and* an eight-die pool. Two
+systems can be tuned to agree exactly in the middle and diverge into
+completely different games at the edges — because one is adding and the
+other is multiplying. This is the single most common way a well-meaning
+conversion breaks.
+
+**Before you invent a mechanic, check whether you're re-inventing one.**
+The rules are built from four objects — a roll, a clock of 4/6/8/10
+segments, a four-row outcome matrix, and a two-currency economy — used at
+every scale. Crafting, travel, downtime and warfare all run on those four
+without additions. If your supplement needs its own resolution mechanic,
+it's worth one more look: usually the thing you want is a roll, a clock,
+an outcome, or a piece of table state wearing a costume. Supplements that
+invent skills, clock sizes, or difficulty ladders stop being playable
+alongside published material, which is the one thing a supplement really
+shouldn't do.
+
+**A worked example.** *The People's Die* — a complete d6 conversion,
+written as a joke and playable straight — is published as the reference
+model for this. It states every departure from the core rules, explains
+the reasoning behind each, and closes with an appendix of exactly
+computed probabilities showing what the conversion actually does to the
+game (including the part where it accidentally abolishes the clean
+success at seven dice). The comedy is optional. The appendix is the part
+worth copying.
+
+---
+
 ## Enforcement
 
 We don't curate the program and won't review your work before or after

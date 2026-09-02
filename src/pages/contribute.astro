@@ -12,7 +12,11 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   </div>
 
   <h2>Extend the Tag DSL</h2>
-  <p>Add new GM directives, narrative tools, or mechanical hooks to the deterministic, test-covered protocol that keeps the AI GM legible. Start in <code>fates-edge-ai-gm-bot</code>'s tag-protocol module.</p>
+  <p>Add narrative tools and hooks into world state, or better ergonomics for things the protocol currently expresses clumsily. Start in <code>fates-edge-ai-gm-bot</code>'s tag-protocol module, and read the <a href="/architecture#tag-dsl">directive reference</a> first.</p>
+  <div class="callout">
+    <p><strong>One check before you add a verb.</strong> The whole protocol is 24 directives, and it stays that size because the ruleset is self-similar: crafting, travel, downtime, magic and warfare all run on a roll, a clock, a four-row outcome matrix and a two-currency economy, with no additions. Adding the entire warfare module cost the protocol zero new verbs.</p>
+    <p>So if your extension needs a new directive, it's worth one more look — usually the thing you want is a roll, a clock, an outcome, or a piece of table state wearing a costume. PRs that <em>remove</em> a verb are as welcome as ones that add one.</p>
+  </div>
 
   <h2>Build new client surfaces</h2>
   <p>Mobile app, Slack bot, custom VTT — anything that speaks the room protocol can join the ecosystem. The transport layer is designed for exactly this.</p>
@@ -24,7 +28,17 @@ import DocsLayout from '../layouts/DocsLayout.astro';
   <p>Event parity across web, desktop, terminal, Discord, Roll20, Foundry, and Python clients; reliability and scaling work always welcome.</p>
 
   <h2>Author adventure modules</h2>
-  <p>JSON-based, rules-native, AI-optional. If you'd rather write than code, this is the highest-leverage way to contribute.</p>
+  <p>JSON-based, rules-native, AI-optional. If you'd rather write than code, this is the highest-leverage way to contribute — and unlike code, it needs no review queue: see the <a href="/community-content">Community Content Program</a>, which grants commercial rights up front.</p>
+  <p>A module that follows these conventions drops straight into play alongside published material. One that doesn't will quietly fight the engine:</p>
+  <ul>
+    <li><strong>Rate adversaries by Threat Level, 1–10.</strong> Not Tier (that's a player character's XP band) and not Cap (that's a Follower's Capability). A creature has neither.</li>
+    <li><strong>State Harm Levels, never hit points.</strong> <code>3 (standard)</code>, <code>8 (advanced)</code>, <code>8 per phase</code>, or <code>None (puzzle)</code> — and a puzzle creature <em>must</em> state how it actually ends, since attacks won't do it.</li>
+    <li><strong>Clocks are 4, 6, 8 or 10 segments.</strong> Nothing else. A one-segment "clock" is a condition; write it as one.</li>
+    <li><strong>DV runs 2 to 5.</strong> Above 5 is a defect, not a hard encounter — a tougher opponent worsens <em>Position</em>, which is what Position is for.</li>
+    <li><strong>There are sixteen skills.</strong> Inventing a seventeenth is the fastest way to make a module unusable with everything else.</li>
+    <li><strong>Military units use Capability 1–5 and Scale I–IV.</strong> Quality and size, recorded separately, because a large bad army is a common thing.</li>
+  </ul>
+  <p>Every one of those is in the <abbr title="System Reference Document">SRD</abbr>; the list is here because they're the six that get missed most often.</p>
 
   <h2>Expand the voice stack</h2>
   <p>New TTS engines, ambience systems, or adapters for the (fully toggleable) voice pipeline.</p>

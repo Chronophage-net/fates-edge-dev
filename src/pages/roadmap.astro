@@ -73,6 +73,18 @@ function fmtDate(iso) {
     <li>Community-run adventure module registry.</li>
   </ul>
 
+  <h2>The content track</h2>
+  <p>The lists above are software. A comparable amount of work happens on the books, and it has its own backlog — worth stating, because some of it is more approachable than the code for anyone who'd rather write or proofread than commit.</p>
+  <p><strong>Where it stands:</strong> 64 documents published to the reader — the SRD, both guides, 24 adventures, 21 expansions, 6 anthology volumes and the quickstarts — against roughly 114 LaTeX sources in the repository. So a meaningful fraction of the writing exists only as <code>.tex</code> and isn't readable by anyone who hasn't cloned it.</p>
+  <ul>
+    <li><strong>Regenerate the LaTeX from the HTML.</strong> The pipeline currently points the wrong way. The repo was built as LaTeX-to-everything, but the HTML is what gets published and therefore what gets corrected, so the <code>.tex</code> sources have drifted — several still carry a retired Threat Level table, the previous edition's skill names and the old Position-overflow rule. The fix is to generate the LaTeX <em>from</em> the corrected HTML rather than merge two divergent copies by hand. Blocked first on the Player's Guide not compiling at all (missing <code>fontawesome5.sty</code>).</li>
+    <li><strong>Convert the remaining supplements.</strong> Roughly forty LaTeX-only files, triaged in the repo's <code>GUIDES_TODO.md</code>: a handful worth converting as they stand, a larger group that should be absorbed into documents that already exist rather than shipped as thin separate books, and one that's simply misfiled.</li>
+    <li><strong>A fourth Peoples and Cultures volume.</strong> Twelve cultures still have no write-up — Ecktoria, Vhasia, Kahfagia, Silkstrand, Ashaan, Dhahara, Ubral, Fhara, Oshiira, Trow, Hag/Morag and the Linn. The source material for these is thin, so this one is authoring rather than conversion.</li>
+    <li><strong>The canonical-skill sweep.</strong> Every roll, prerequisite and NPC block in the Player's Guide checked against the sixteen skills. Tedious, mechanical, and exactly the kind of thing that's easy to review a PR for.</li>
+    <li><strong>Two manifest generators disagree.</strong> <code>sync_data_to_consumers.py</code> and <code>generate-manifests.js</code> emit different bytes for the same file, so the apps tree flaps on every sync. Small, self-contained, and annoying to whoever touches it next.</li>
+    <li><strong>Heritage isn't applied by the dice roller.</strong> <code>roller.js</code> clamps Position correctly but doesn't read a character's Affinity or Limit, so players apply it by hand. A contained web-client task.</li>
+  </ul>
+
   <p>Want to influence this list? Open an issue on the relevant repo, or raise it in <a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Discussions</a> or the <a href="https://discord.gg/etmb7DYbj">Discord</a> — roadmap items generally start there before they're formalized.</p>
 
   <hr style="border: none; border-top: 1px solid var(--border); margin: 3rem 0;" />
