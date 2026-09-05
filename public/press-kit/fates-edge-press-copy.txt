@@ -1,0 +1,56 @@
+FATE'S EDGE — PRESS COPY
+Updated September 2026
+
+ONE LINE
+
+Fate's Edge is a consequence-driven fantasy roleplaying game about dangerous choices and the question beneath them: what do we owe each other?
+
+
+SHORT DESCRIPTION (about 45 words)
+
+Fate's Edge is a fantasy tabletop roleplaying game of known risks, costly promises, and consequences that keep the story moving. Its free browser toolkit handles characters, dice, encounters, campaigns, and the books themselves, online or around one table, without requiring an account.
+
+
+MEDIUM DESCRIPTION (about 100 words)
+
+Fate's Edge is a consequence-driven fantasy tabletop roleplaying game set around the Amaranthine Sea. One roll answers two questions: did you manage it, and what did the attempt set loose? Players see the danger before they commit, then live with results that complicate the story instead of stopping it. The larger question is ethical rather than cosmic bookkeeping: what do people owe one another, and what happens when duty, love, inheritance, hunger, and power give different answers? Free rules are accompanied by a browser toolkit for characters, dice, encounters, campaigns, documents, shared play, and optional local AI assistance. No account is required for the standalone client.
+
+
+LONG DESCRIPTION (about 180 words)
+
+Fate's Edge is a consequence-driven fantasy tabletop roleplaying game set among the ports, courts, old roads, and unsettled borders of the Amaranthine Sea. The rules make risk legible before a character acts. One roll then answers whether the attempt succeeds and what it sets loose; failure changes the situation instead of closing a door.
+
+Characters are more than builds. Bonds, Complications, followers, patrons, debts, and duties remain beside their talents because the game's central question is not whether some cosmic account balances. It is the harder, more human question: what do we owe each other? Different peoples, institutions, and generations answer differently, and play begins where those answers cannot all be honored at once.
+
+The game and its digital tools are built in the open. The free browser client includes character creation and printable sheets, dice resolution, encounter and faction tools, campaign notes, integrated rules and adventures, a shared whiteboard and VTT, and optional real-time play. A separate AI GM can join through the same campaign server as any other client and can run locally; it is an option, not the premise. The standalone toolkit requires no account and keeps its data in the browser until the table chooses to connect it.
+
+
+PLAIN FACTS
+
+Creator and author: Nicholas A. Gasper (Chronophage)
+Genre: Consequence-driven fantasy tabletop roleplaying game
+Setting: The lands and waters around the Amaranthine Sea
+Format: Free digital rules, printable resources, browser toolkit, and optional real-time server
+Play modes: Around one table, online, or a mixture of both
+Account required: No for the standalone browser toolkit
+Self-hosting: Supported
+Optional AI GM: Supported through a separate, pluggable client; local models are supported
+Code license: MIT where marked
+Rules license: CC BY-NC-SA 4.0 where marked as SRD
+Setting and other proprietary content: © Nicholas A. Gasper; see the repository license files
+
+
+LINKS
+
+Game: https://fates-edge.com
+Code and releases: https://github.com/Chronophage-net/fates-edge-apps
+Development portal: https://dev.fates-edge.com
+Blog: https://blog.fates-edge.com
+Community: https://discord.gg/etmb7DYbj
+Contact: support@fates-edge.com
+
+
+NAME AND CREDIT
+
+Use the title “Fate's Edge.” Credit the game to Nicholas A. Gasper. For questions about commercial use of setting material, adaptations, interviews, review copies, or assets not explicitly licensed for reuse, write to support@fates-edge.com.
+

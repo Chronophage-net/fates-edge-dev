@@ -1,0 +1,7 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+import { Content, frontmatter } from '../../TRANSLATIONS.md';
+---
+<DocsLayout title={frontmatter.title} description={frontmatter.description}>
+  <Content />
+</DocsLayout>

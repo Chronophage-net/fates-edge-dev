@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fate's Edge — Fact Sheet</title>
+  <style>
+    :root { --ink:#201d19; --paper:#f6f0e5; --gold:#9a7421; --rule:#c7bda9; --muted:#655f56; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:#d9d3c8; font-family:Georgia, 'Times New Roman', serif; line-height:1.5; }
+    main { width:min(850px, calc(100% - 2rem)); margin:2rem auto; padding:3.2rem 3.5rem; background:var(--paper); box-shadow:0 16px 55px #0002; }
+    header { border-bottom:3px double var(--ink); padding-bottom:1.2rem; margin-bottom:1.7rem; }
+    .kicker, dt { color:var(--gold); font:bold .76rem/1.2 Arial,sans-serif; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { margin:.15rem 0 0; font-size:clamp(2.5rem,7vw,4.6rem); line-height:.9; }
+    .deck { max-width:42rem; margin:.9rem 0 0; color:var(--muted); font-size:1.16rem; }
+    h2 { margin:1.8rem 0 .55rem; font-size:1.25rem; border-bottom:1px solid var(--rule); padding-bottom:.25rem; }
+    p { margin:.5rem 0 .9rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.75rem; }
+    dl { display:grid; grid-template-columns:8.6rem 1fr; gap:.55rem 1rem; margin:.7rem 0; }
+    dd { margin:0; }
+    .quote { border-left:4px solid var(--gold); padding:.35rem 0 .35rem 1rem; font-size:1.08rem; }
+    .links { font-family:Arial,sans-serif; font-size:.88rem; }
+    a { color:#70510e; text-underline-offset:2px; }
+    footer { border-top:1px solid var(--rule); margin-top:2rem; padding-top:1rem; color:var(--muted); font-size:.88rem; }
+    @media(max-width:680px) { main{padding:2rem 1.4rem}.grid{grid-template-columns:1fr}dl{grid-template-columns:1fr}dt{margin-top:.4rem} }
+    @media print { @page{size:letter;margin:.45in} body{background:white;font-size:10pt}main{width:auto;margin:0;padding:0;box-shadow:none}.deck{font-size:12pt}.grid{gap:1.2rem}h2{margin-top:1rem}footer{margin-top:1rem} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="kicker">Press fact sheet · September 2026</div>
+    <h1>Fate's Edge</h1>
+    <p class="deck">A consequence-driven fantasy roleplaying game about dangerous choices and the question beneath them: what do we owe each other?</p>
+  </header>
+
+  <div class="grid">
+    <section>
+      <h2>The game</h2>
+      <p>Fate's Edge is set among the ports, courts, old roads, and unsettled borders of the Amaranthine Sea. Players know the risk before they commit. One roll answers whether an attempt succeeds and what it sets loose; a miss changes the situation instead of ending the scene.</p>
+      <p>Characters carry Bonds, Complications, duties, and followers beside their talents. Different peoples and institutions disagree about what is owed, and play begins when their answers cannot all be honored.</p>
+
+      <h2>At the table</h2>
+      <p class="quote">Dice and cards settle the danger. What you owe one another is harder.</p>
+      <p>The game supports play around one table, online, or somewhere between. The browser toolkit runs without an account and stores data locally unless the table chooses to connect to a campaign server.</p>
+    </section>
+
+    <section>
+      <h2>Plain facts</h2>
+      <dl>
+        <dt>Creator</dt><dd>Nicholas A. Gasper (Chronophage)</dd>
+        <dt>Genre</dt><dd>Consequence-driven fantasy TTRPG</dd>
+        <dt>Setting</dt><dd>The Amaranthine Sea</dd>
+        <dt>Format</dt><dd>Digital rules, printable resources, browser toolkit</dd>
+        <dt>Accounts</dt><dd>Not required for standalone play</dd>
+        <dt>Hosting</dt><dd>Self-hosting supported</dd>
+        <dt>AI GM</dt><dd>Optional separate client; local models supported</dd>
+      </dl>
+
+      <h2>What ships with it</h2>
+      <p>Character creation and printable sheets; dice and consequence cards; encounters, factions, campaign notes, whiteboard and VTT; integrated rules and adventures; optional shared play and AI assistance.</p>
+
+      <h2>Links</h2>
+      <div class="links">
+        <div><a href="https://fates-edge.com">fates-edge.com</a></div>
+        <div><a href="https://github.com/Chronophage-net/fates-edge-apps">github.com/Chronophage-net/fates-edge-apps</a></div>
+        <div><a href="https://dev.fates-edge.com">dev.fates-edge.com</a></div>
+        <div><a href="https://blog.fates-edge.com">blog.fates-edge.com</a></div>
+        <div><a href="mailto:support@fates-edge.com">support@fates-edge.com</a></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Code is MIT where marked. SRD material is CC BY-NC-SA 4.0 where marked. Setting and other proprietary content © Nicholas A. Gasper; consult the repository license files. Press assets may be reproduced in editorial coverage of Fate's Edge.
+  </footer>
+</main>
+</body>
+</html>

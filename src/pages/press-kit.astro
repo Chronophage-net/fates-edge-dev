@@ -1,62 +1,133 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
 
-// Lightweight seed of a "documents" area for the portal: a flat list of
-// downloadable/embeddable static assets under /public/press-kit/. Add an
-// entry here and drop the file in public/press-kit/ to publish a new one —
-// no build step or content collection needed for something this simple.
-const documents = [
-  {
-    title: "Fate's Edge Flyer",
-    description: 'A single-page, print-ready flyer for tabling, game stores, or handing to a friend. Self-contained HTML — open it, print it, or drop it on a table screen.',
-    file: '/press-kit/fates-edge-flyer.html',
-  },
+const downloads = [
+  { title: 'Complete press kit', note: 'Copy, fact sheet, flyer, screenshots, and demo video in one archive.', file: '/press-kit/fates-edge-press-kit.zip', action: 'Download ZIP' },
+  { title: 'Fact sheet', note: 'A printable overview with verified project facts, links, and licensing notes.', file: '/press-kit/fates-edge-fact-sheet.html', action: 'Open / Print' },
+  { title: 'Ready-to-use copy', note: 'One-line, short, medium, and long descriptions in plain text.', file: '/press-kit/fates-edge-press-copy.txt', action: 'Download TXT' },
+  { title: 'Table flyer', note: 'The original one-page handout, revised and still easy to print.', file: '/press-kit/fates-edge-flyer.html', action: 'Open / Print' },
+];
+
+const facts = [
+  ['Creator', 'Nicholas A. Gasper (Chronophage)'],
+  ['Genre', 'Consequence-driven fantasy tabletop roleplaying game'],
+  ['Setting', 'The lands and waters around the Amaranthine Sea'],
+  ['Format', 'Free digital rules, printable resources, and a browser toolkit'],
+  ['Play', 'Around one table, online, or a mixture of both'],
+  ['Account', 'Not required for the standalone browser toolkit'],
+  ['Hosting', 'Self-hosting supported'],
+  ['AI', 'Optional separate client; local models supported'],
 ];
 ---
-<DocsLayout title="Press Kit" description="Downloadable and embeddable promotional material for Fate's Edge.">
-  <h1>Press Kit</h1>
-  <p>Promotional material for sharing Fate's Edge with players, at a table, or in a store. Everything here is free to print, share, or remix — see the <a href="/art-bible#call-for-art">Call for Art</a> page for the same terms as fan art.</p>
-
-  {documents.map((doc) => (
-    <div class="doc-card">
-      <div class="doc-card-header">
-        <h3>{doc.title}</h3>
-        <a class="btn btn-sm btn-secondary" href={doc.file} target="_blank" rel="noopener">Open / Download ↗</a>
-      </div>
-      <p>{doc.description}</p>
-      <iframe src={doc.file} title={doc.title} loading="lazy"></iframe>
+<DocsLayout title="Press Kit" description="Fate's Edge facts, press copy, screenshots, video, and downloadable media assets.">
+  <header class="press-hero">
+    <p class="eyebrow">Press kit · September 2026</p>
+    <h1>Fate's Edge</h1>
+    <p class="lede">A consequence-driven fantasy roleplaying game about dangerous choices and the question beneath them: <em>what do we owe each other?</em></p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/press-kit/fates-edge-press-kit.zip" download>Download everything</a>
+      <a class="btn btn-secondary" href="mailto:support@fates-edge.com">Press contact</a>
     </div>
-  ))}
+  </header>
 
-  <div class="callout">
-    <strong>Have something to add?</strong> A one-pager, a table-top card, a con handout — open a PR against <code>public/press-kit/</code> in this repo, or float the idea in <a href="https://github.com/Chronophage-net/fates-edge-dev/discussions">Discussions</a> first.
-  </div>
+  <section aria-labelledby="quick-description">
+    <h2 id="quick-description">The useful paragraph</h2>
+    <p>Fate's Edge is a fantasy tabletop roleplaying game set around the Amaranthine Sea. One roll answers two questions: did you manage it, and what did the attempt set loose? Players see the danger before they commit, then live with results that complicate the story instead of stopping it. The free browser toolkit handles characters, dice, encounters, campaigns, and the books themselves, online or around one table, without requiring an account.</p>
+    <p><a href="/press-kit/fates-edge-press-copy.txt">Shorter and longer versions are ready to copy.</a></p>
+  </section>
+
+  <section aria-labelledby="facts-title">
+    <h2 id="facts-title">At a glance</h2>
+    <dl class="fact-grid">
+      {facts.map(([term, description]) => <><dt>{term}</dt><dd>{description}</dd></>)}
+    </dl>
+  </section>
+
+  <section aria-labelledby="demo-title">
+    <div class="section-head">
+      <div>
+        <h2 id="demo-title">See the toolkit</h2>
+        <p>A short, silent tour. It shows the current browser client rather than a composited promise of one.</p>
+      </div>
+      <a class="btn btn-sm btn-secondary" href="/press-kit/demo.mp4" download>Download MP4</a>
+    </div>
+    <video class="press-video" controls preload="metadata" poster="/press-kit/demo-thumbnail.png">
+      <source src="/press-kit/demo.mp4" type="video/mp4" />
+      <a href="/press-kit/demo.mp4">Download the demo video.</a>
+    </video>
+  </section>
+
+  <section aria-labelledby="images-title">
+    <div class="section-head">
+      <div>
+        <h2 id="images-title">Screenshots</h2>
+        <p>Use these in editorial coverage with “Fate's Edge / Nicholas A. Gasper” as the credit.</p>
+      </div>
+    </div>
+    <div class="media-grid">
+      <a href="/press-kit/toolkit-home.png"><img src="/press-kit/toolkit-home.png" alt="Fate's Edge toolkit home screen" loading="lazy" /><span>Toolkit home</span></a>
+      <a href="/press-kit/toolkit-tour.png"><img src="/press-kit/toolkit-tour.png" alt="The guided tour open over the Fate's Edge toolkit" loading="lazy" /><span>Guided tour</span></a>
+      <a href="/press-kit/toolkit-encounter.png"><img src="/press-kit/toolkit-encounter.png" alt="Fate's Edge encounter tools" loading="lazy" /><span>Encounter tools</span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="downloads-title">
+    <h2 id="downloads-title">Files</h2>
+    <div class="download-grid">
+      {downloads.map(item => (
+        <article>
+          <h3>{item.title}</h3>
+          <p>{item.note}</p>
+          <a class="btn btn-sm btn-secondary" href={item.file} target="_blank" rel="noopener">{item.action}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="links-title">
+    <h2 id="links-title">Links and contact</h2>
+    <ul class="link-list">
+      <li><a href="https://fates-edge.com">Play and read: fates-edge.com</a></li>
+      <li><a href="https://github.com/Chronophage-net/fates-edge-apps">Code and releases: GitHub</a></li>
+      <li><a href="https://blog.fates-edge.com">Development writing: Fate's Edge blog</a></li>
+      <li><a href="https://discord.gg/etmb7DYbj">Community: Discord</a></li>
+      <li><a href="mailto:support@fates-edge.com">Interviews, permissions, and other questions: support@fates-edge.com</a></li>
+    </ul>
+    <div class="callout license-note">
+      Code is MIT where marked. SRD material is CC BY-NC-SA 4.0 where marked. Setting and other proprietary material remains © Nicholas A. Gasper. Press assets may be reproduced in editorial coverage of Fate's Edge; contact Nick for other uses.
+    </div>
+  </section>
 </DocsLayout>
 
 <style>
-  .doc-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin: 1.5rem 0;
-  }
-  .doc-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .doc-card-header h3 {
-    margin: 0;
-    color: var(--gold);
-  }
-  .doc-card iframe {
-    width: 100%;
-    height: 520px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    margin-top: 1rem;
-    background: #fff;
+  .press-hero { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+  .eyebrow { margin: 0 0 .35rem; color: var(--gold); font: 700 .75rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+  .press-hero h1 { margin: 0; font-size: clamp(3rem, 9vw, 5.8rem); line-height: .9; }
+  .lede { max-width: 42rem; margin: 1.15rem 0; font-size: 1.3rem; line-height: 1.45; color: var(--text2); }
+  .hero-actions, .section-head { display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
+  section { margin: 2.8rem 0; }
+  section h2 { margin-bottom: .55rem; }
+  .fact-grid { display: grid; grid-template-columns: 8rem 1fr; border-top: 1px solid var(--border); }
+  .fact-grid dt, .fact-grid dd { margin: 0; padding: .65rem .5rem; border-bottom: 1px solid var(--border); }
+  .fact-grid dt { color: var(--gold); font-weight: 700; }
+  .press-video { display: block; width: 100%; aspect-ratio: 16/9; margin-top: 1rem; background: #090a0c; border: 1px solid var(--border); border-radius: 8px; }
+  .media-grid, .download-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .media-grid a { color: var(--text); text-decoration: none; }
+  .media-grid img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border: 1px solid var(--border); border-radius: 6px; background: #111; }
+  .media-grid span { display: block; margin-top: .45rem; color: var(--text2); font-size: .88rem; }
+  .download-grid article { display: flex; flex-direction: column; padding: 1rem; border: 1px solid var(--border); border-radius: 7px; }
+  .download-grid article:last-child { grid-column: span 3; }
+  .download-grid h3 { margin: 0; color: var(--gold); }
+  .download-grid p { flex: 1; color: var(--text2); }
+  .download-grid .btn { align-self: flex-start; }
+  .link-list { padding-left: 1.1rem; }
+  .link-list li { margin: .35rem 0; }
+  .license-note { margin-top: 1.2rem; }
+  @media(max-width: 760px) {
+    .media-grid, .download-grid { grid-template-columns: 1fr; }
+    .download-grid article:last-child { grid-column: auto; }
+    .fact-grid { grid-template-columns: 1fr; }
+    .fact-grid dt { border-bottom: 0; padding-bottom: 0; }
+    .fact-grid dd { padding-top: .2rem; }
   }
 </style>
