@@ -13,6 +13,10 @@ you know well and a piece small enough to finish comfortably.
 client. Then work outward from the SRD and Essentials to character creation,
 player references, and the GM's core procedures.
 
+[Start in five steps](#your-first-contribution-in-five-steps) ·
+[Find the files](#find-the-files) · [Check your work](#check-your-work) ·
+[Send a correction](#what-to-include-when-sending-a-correction)
+
 ## Language priorities
 
 Our first priority is to finish and review Spanish, since that work is already
