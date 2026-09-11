@@ -2,7 +2,9 @@
 import DocsLayout from '../layouts/DocsLayout.astro';
 
 const downloads = [
-  { title: 'Complete press kit', note: 'Copy, fact sheet, flyer, screenshots, and demo video in one archive.', file: '/press-kit/fates-edge-press-kit.zip', action: 'Download ZIP' },
+  { title: 'First Play Kit', note: 'A ready-to-run introductory session, rules reference, and five pregenerated characters.', file: '/press-kit/fates-edge-first-play-kit.pdf', action: 'Download PDF' },
+  { title: 'Editable First Play Kit', note: 'The Word edition for preparing your own table copy.', file: '/press-kit/fates-edge-first-play-kit.docx', action: 'Download DOCX' },
+  { title: 'Complete press kit', note: 'First Play Kit, copy, fact sheet, flyer, screenshots, and demo video in one archive.', file: '/press-kit/fates-edge-press-kit.zip', action: 'Download ZIP' },
   { title: 'Fact sheet', note: 'A printable overview with verified project facts, links, and licensing notes.', file: '/press-kit/fates-edge-fact-sheet.html', action: 'Open / Print' },
   { title: 'Ready-to-use copy', note: 'One-line, short, medium, and long descriptions in plain text.', file: '/press-kit/fates-edge-press-copy.txt', action: 'Download TXT' },
   { title: 'Table flyer', note: 'The original one-page handout, revised and still easy to print.', file: '/press-kit/fates-edge-flyer.html', action: 'Open / Print' },
@@ -116,7 +118,6 @@ const facts = [
   .media-grid img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border: 1px solid var(--border); border-radius: 6px; background: #111; }
   .media-grid span { display: block; margin-top: .45rem; color: var(--text2); font-size: .88rem; }
   .download-grid article { display: flex; flex-direction: column; padding: 1rem; border: 1px solid var(--border); border-radius: 7px; }
-  .download-grid article:last-child { grid-column: span 3; }
   .download-grid h3 { margin: 0; color: var(--gold); }
   .download-grid p { flex: 1; color: var(--text2); }
   .download-grid .btn { align-self: flex-start; }

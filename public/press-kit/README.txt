@@ -15,6 +15,12 @@ fates-edge-press-copy.txt
 fates-edge-flyer.html
     A self-contained, single-page handout for print or a table display.
 
+fates-edge-first-play-kit.pdf
+    A ready-to-run introductory session with rules reference and five pregens.
+
+fates-edge-first-play-kit.docx
+    The editable source for the First Play Kit.
+
 demo.mp4
     A short silent tour of the browser toolkit.
 
