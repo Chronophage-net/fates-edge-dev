@@ -101,14 +101,14 @@ No need to volunteer for a whole book.
 
 | Material | Current state | Useful next step |
 | --- | --- | --- |
-| English interface (`en`) | Source catalogue | Report unclear source wording |
-| American and British English (`en-US`, `en-GB`) | Regional catalogues | Check regional wording and formatting |
-| Spanish interface (`es`) | Complete initial catalogue; machine-assisted with targeted editing | Review each screen for natural Spanish and consistent terminology |
+| English interface (`en`) | Source catalog | Report unclear source wording |
+| American and British English (`en-US`, `en-GB`) | Regional catalogs | Check regional wording and formatting |
+| Spanish interface (`es`) | Complete initial catalog; machine-assisted with targeted editing | Review each screen for natural Spanish and consistent terminology |
 | Spanish SRD and Essentials | Complete initial HTML translations; full editorial review pending | Check rules, examples, tables, and cross-references |
 | Spanish quickstarts and core player/GM references | Initial HTML translations | Start with a small section and compare it to the English original |
 | Other languages | Contributions welcome | Start with the interface or quickstart and establish a short glossary |
 
-**Coverage is not a quality score.** A catalogue can contain every key and still
+**Coverage is not a quality score.** A catalog can contain every key and still
 need better wording. Machine-assisted text must be identified as such until a
 human has reviewed the relevant passage. Please say exactly what you reviewed;
 checking one chapter does not certify the rest of a book.
@@ -200,8 +200,8 @@ npm test
 npm run build
 ```
 
-The coverage report finds missing catalogue entries. The tests check translation
-loading and the structure of the shipped catalogues. These checks cannot decide
+The coverage report finds missing catalog entries. The tests check translation
+loading and the structure of the shipped catalogs. These checks cannot decide
 whether a sentence sounds natural or preserves a rule; that is the reviewer's job.
 
 To scaffold another interface language:
